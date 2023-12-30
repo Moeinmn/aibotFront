@@ -1,13 +1,15 @@
 "use client"
 import { useState } from "react";
 import Logo from "./logo";
-import styles from "./styles.module.css"
+import useStyles from "./styles";
+// import styles from "./styles.module.css"
 
 
 
 
 
-  const Navigation = () => {
+  const Header = () => {
+    const styles = useStyles();
     // State to manage whether the menu is active or not
     const [isActive, setIsActive] = useState(false);
 
@@ -56,7 +58,7 @@ import styles from "./styles.module.css"
                             </ul>
                         </div>
 
-                        <div>
+                        <div className={styles.auth}>
                         <a href="./login" >
                           ورود</a>
                         <a href="./login" className={styles.menuBlock}>ثبت نام</a>
@@ -70,4 +72,4 @@ import styles from "./styles.module.css"
 };
 
 
-export default Navigation;
+export default Header;

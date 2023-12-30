@@ -1,8 +1,11 @@
-import Navigation from "@/src/shared/components/navigations";
+import Landing from "@/src/modules/landing";
+
 
 
 export default function Home() {
   return (
-    <Navigation/>
+  <>
+  <Landing/>
+  </>
   )
 }
