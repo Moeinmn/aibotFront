@@ -2,8 +2,10 @@
 import { useState } from "react";
 import Logo from "./logo";
 import useStyles from "./styles";
-// import styles from "./styles.module.css"
-
+import { Box, Button, Container, Drawer, Hidden } from "@material-ui/core";
+import { HambergerMenu } from "iconsax-react";
+import clsx from "clsx";
+import Link from "next/link";
 
 
 
@@ -11,62 +13,195 @@ import useStyles from "./styles";
   const Header = () => {
     const styles = useStyles();
     // State to manage whether the menu is active or not
-    const [isActive, setIsActive] = useState(false);
+    const [isDrawerOpen, toggleDrawer] = useState(false);
+
 
     // Toggle the active state of the menu
-    const toggleMenu = () => {
-        setIsActive(!isActive);
-    };
+ 
+
+    const links:any = [
+        {
+          link: "/",
+          title: "امکانات",
+        },
+        {
+          link: "/",
+          title: "قیمت",
+        },
+        {
+          link: "/",
+          title: "مستندات",
+        },
+        {
+          link: "/",
+          title: "بلاگ",
+        },
+        {
+          link: "/",
+          title: "درباره ی ما",
+        },
+      ];
 
     return (
         <>
-            <div className={styles.header}>
-                <div className={styles.container}>
-                    <nav className={styles.navbar}>
-                        <Logo />
-                        <div 
-                            className={styles.burger} 
-                            id="burger" 
-                            onClick={toggleMenu} // Attach click event to burger
+        <Hidden smUp>
+        <Drawer
+          anchor={"top"}
+          open={isDrawerOpen}
+          onClose={() => toggleDrawer(false)}
+        >
+          <Box my={4} mt={8}>
+            <header>
+              <nav className={styles.nav}>
+                <ul>
+                  {links.map((link:any, index:any) => {
+                    return (
+                      <li key={index}>
+                        <Link
+                          href={link.link}
+                          key={`mobile-menu-item-${index}`}
                         >
-                            <span className={styles.burgerLine}></span>
-                            <span className={styles.burgerLine}></span>
-                            <span className={styles.burgerLine}></span>
-                        </div>
-                        <span 
-                            className={`${styles.overlay} ${isActive ? styles.overlayisactive : ''}`}
-                            onClick={toggleMenu} // Attach click event to overlay
-                        ></span>
-                        <div 
-                            className={`${styles.menu} ${isActive ? styles.menuisactive : ''}`} 
-                            id="menu"
-                        >
-                            <ul className={styles.menuInner}>
-                                {/* Each link closes the menu on click */}
-                                <li className="menuItem">
-                                    <a className={styles.menuLink} href="#" onClick={toggleMenu}>امکانات</a>
-                                </li>
-                                <li className="menuItem">
-                                    <a className={styles.menuLink} href="#" onClick={toggleMenu}>قیمت</a>
-                                </li>
-                                <li className="menuItem">
-                                    <a className={styles.menuLink} href="#" onClick={toggleMenu}>مستندات</a>
-                                </li>
-                                <li className="menuItem">
-                                    <a className={styles.menuLink} href="#" onClick={toggleMenu}>درباره ی ما</a>
-                                </li>
-                            </ul>
-                        </div>
+                          <Box
+                            mt={2}
+                            ml={4}
+                            onClick={() => {
+                              toggleDrawer(false);
+                            }}
+                            id={`link-header-${link.title}`}
+                          >
+                            {link.title}
+                          </Box>
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </nav>
+            </header>
+          </Box>
+        </Drawer>
+      </Hidden>
 
-                        <div className={styles.auth}>
-                        <a href="./login" >
-                          ورود</a>
-                        <a href="./login" className={styles.menuBlock}>ثبت نام</a>
-                        </div>
+      <Hidden smUp>
+        <Container
+          className={clsx(
+            styles.mobileContainer,
+            // isFixedScroll && "fixed",
+            // isFixedScroll && "not-fixed",
+            // hide_unfixed && !isFixedScroll && "hide",
+            // theme == "white" && !isFixedScroll && "white-theme",
+            // theme == "default" && "default-theme"
+          )}
+        >
+          <header
+            className={clsx(styles.headerMobile, isDrawerOpen && "drawer-open")}
+          >
+            <HambergerMenu
+              className={clsx("toggle-icon")}
+              size={24}
+              onClick={() => toggleDrawer(!isDrawerOpen)}
+            />
+            <Box
+              width={"100%"}
+              ml={2}
+              display={"flex"}
+              justifyContent={"space-between"}
+              alignItems={"center"}
+            >
+              <Link href={"/"} >
+                <Logo />
+              </Link>
+              
+                <>
+                  <Box display={"inline"}>
+                    <Link href={"/register"} >
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        className="register-btn"
+                      >
+                        ثبت نام
+                      </Button>
+                    </Link>
+                  </Box>
+                </>
+              
+            </Box>
+          </header>
+        </Container>
+      </Hidden>
 
-                    </nav>
+
+
+     <Hidden xsDown>
+     <header
+          className={clsx(
+            styles.headerDesktop,
+            // isFixedScroll && "fixed",
+            // hasBg && styles.hasBg,
+            // hide_unfixed && !isFixedScroll && "hide",
+            // !hasAnim && "noAnim",
+            // theme == "white" && !isFixedScroll && "white-theme",
+            // theme == "default" && "default-theme"
+          )}
+        >
+          <Container>
+            <nav className={styles.nav}>
+              <div className={styles.headLeft}>
+                <Link href={"/"} >
+                  <Logo  />
+                </Link>
+                <div className={styles.linksWrapper}>
+                  <ul>
+                    {links.map((_link:any, index:any):any => {
+                      // const isActive = router.pathname.includes(_link.link);
+                      return (
+                        <li key={index}>
+                          <Link
+                            href={_link.link}
+                            className={clsx("item")}
+                            id={`link-header-${_link.title}`}
+                          >
+                            {_link.title}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
-            </div>
+              </div>
+              <div>
+   
+                  <>
+                    <Box display={"inline"} mr={2}>
+                      <Link href={"/"}>
+                        <Button
+                        //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
+                          // variant="outlined"
+                          color="inherit"
+                          className={styles.headBtns}
+                        >
+                          ورود
+                        </Button>
+                      </Link>
+                    </Box>
+                    <Link href={"/"}>
+                      <Button
+                        // id={ELEMENTS.HEADER_REGISTER_BUTTON}
+                        variant="outlined"
+                        color="inherit"
+                        className={clsx( styles.registerBtn)}
+                      >
+                        ثبت نام
+                      </Button>
+                    </Link>
+                  </>
+                
+              </div>
+            </nav>
+          </Container>
+     </header>
+     </Hidden>
         </>
     );
 };
