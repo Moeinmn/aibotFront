@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   headerDesktop: {
     width: "100%",
-    // borderBottomRightRadius: 16,
-    // borderBottomLeftRadius: 16,
+    borderBottom: "0.8px solid black",
     padding: theme.spacing(2, 0, 2),
     transition: "all 250ms",
     position: "fixed",

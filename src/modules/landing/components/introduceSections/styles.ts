@@ -5,42 +5,18 @@ const useStyles = makeStyles((theme) => ({
         position: "relative",
         overflow: "hidden",
         height: "auto",
-        marginBottom: theme.spacing(10),
+        top:"115px",
+        textAlign:"center",
+
+
       },
-  landingHeader: {
-    textAlign: "center",
-    "& span": {
-      backgroundImage: "linear-gradient(90deg, #0061F7 61.46%, #00E0FF 100%)",
-      WebkitBackgroundClip: "text",
-      color: "transparent",
+      introtext:{
+        fontSize:"4.2rem"
+
+      },
+      highlightedText: {
+        color: "#6254FF", // Specific color for highlighted text
     },
-    [theme.breakpoints.down("md")]: {
-      fontSize: 30,
-    },
-  },
-  landingContainer: {
-    maxWidth: 1500,
-    [theme.breakpoints.only("lg")]: {
-      paddingRight: 60,
-      paddingLeft: 60,
-    },
-  },
-  youtubeModal: {
-    "& .MuiPaper-root": {
-      maxWidth: "925px",
-      maxHeight: "520px",
-      height: "80%",
-    },
-  },
-  youtubeVideo: {
-    position: "relative",
-    overflow: "hidden",
-    width: "100%",
-    height: "100%",
-    "& iframe": {
-      width: "100%",
-      height: "100%",
-    },
-  },
+
 }));
 export default useStyles;
