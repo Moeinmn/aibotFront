@@ -1,5 +1,4 @@
 "use client"
-import { Typography } from "@material-ui/core";
 import Logo from "./logo";
 import styles from './styles.module.css'
 import Image from "next/image";
@@ -13,7 +12,28 @@ const IntroduceSections = ()=>{
     return (
         <>
     <div className={styles.root}>
+        <div>
+
+        <Image
+      src="/images/rightBlur.png" 
+      height="100" 
+      width="650" 
+      alt="Logo" 
+      className={styles.rightBlur}
+    />
+    <Image
+      src="/images/rightBlur.png" 
+      height="100" 
+      width="300" 
+      alt="Logo" 
+      className={styles.leftBlur}
+    
+    />
+        </div>
+
  
+
+      
     <div className={styles.continer}>
      <h5>
         <p className={styles.introtext}>
@@ -32,18 +52,15 @@ const IntroduceSections = ()=>{
 بات های مانند chat gpt برای پروژه یا کسب کار خود بسازید تا کارها را انجام دهید. 🎯
       </p>
     </div>
+
+
     <input type="text" className={styles.inputStyle} placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..." />
     
     <div className={styles.demoContainer}>
-    <div >
+    <div>
     <button className={styles.customButton}>ساختن بات دمو</button>
     </div>
-    <Image
-      src="/images/letfBlur.png" 
-      height="100" 
-      width="300" 
-      alt="Logo" 
-    />
+ 
     <div className={styles.imagePhone}>
 
     <Image

@@ -1,0 +1,14 @@
+.root {
+    overflow: hidden;
+    height: auto;
+    text-align: center;
+    position: relative;
+    top: 150px;
+    
+}
+.brandRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+}

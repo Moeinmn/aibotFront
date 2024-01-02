@@ -1,6 +1,7 @@
 "use client"
 
 import IntroduceSections from "./components/introduceSections";
+import TrustBrnadSections from "./components/trustBrandSections";
 import useStyles from "./styles";
 
 
@@ -10,6 +11,7 @@ const Landing=()=>{
     return (
         <>
         <IntroduceSections/>
+        <TrustBrnadSections/>
         </>
     )
 }
