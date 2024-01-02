@@ -10,19 +10,13 @@ const SiteLayout = (props:any) => {
   return (
 
     <html lang="fa" dir="rtl">
-            <body className={myFont.className}>
-            <div style={props.style}>
+    <body className={myFont.className}>
+      
       <Header {...props.headerProps} />
-      {props?.header}
       {props.children}
-      {props?.footer}
-    </div>
+   
 
             </body>
-
-
-  
-
     </html>
 
   )
