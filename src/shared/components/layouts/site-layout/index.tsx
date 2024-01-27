@@ -16,7 +16,7 @@ const SiteLayout = (props:any) => {
       {props.children}
    
 
-            </body>
+    </body>
     </html>
 
   )

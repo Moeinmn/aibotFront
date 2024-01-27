@@ -1,13 +1,35 @@
 "use client"
+import useSelectModal from "@/src/hooks/useSelectModal";
 import Logo from "./logo";
 import styles from './styles.module.css'
 import Image from "next/image";
+import { useState } from "react";
+import axios from "axios";
 
 
 
 
 const IntroduceSections = ()=>{
- 
+  const [inputValue, setInputValue] = useState('');
+  const SelectModal = useSelectModal(); 
+
+  const handleInputChange = (event:any) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = () => {
+    // Here you can send a request to your API endpoint with the input value
+    axios.post('your-api-endpoint', { input: inputValue })
+      .then((response:any) => {
+        SelectModal.setUrls(response);
+        SelectModal.onOpen();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+        // Handle error if needed
+      });
+  };
+
 
     return (
         <>
@@ -54,11 +76,11 @@ const IntroduceSections = ()=>{
     </div>
 
 
-    <input type="text" className={styles.inputStyle} placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..." />
+    <input type="text" value={inputValue} onChange={handleInputChange} className={styles.inputStyle} placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..." />
     
     <div className={styles.demoContainer}>
     <div>
-    <button className={styles.customButton}>ساختن بات دمو</button>
+    <button className={styles.customButton} onClick={handleSubmit}>ساختن بات دمو</button>
     </div>
  
     <div className={styles.imagePhone}>
