@@ -3,14 +3,16 @@ import useSelectModal from "@/src/hooks/useSelectModal";
 import Logo from "./logo";
 import styles from './styles.module.css'
 import Image from "next/image";
-import { useState } from "react";
+import { CSSProperties, useState } from "react";
 import axios from "axios";
+import { ClipLoader, ClockLoader } from "react-spinners";
 
 
 
 
 const IntroduceSections = ()=>{
   const [inputValue, setInputValue] = useState('');
+  const [loading, setLoading] = useState(false);
   const SelectModal = useSelectModal(); 
 
   const handleInputChange = (event:any) => {
@@ -18,17 +20,21 @@ const IntroduceSections = ()=>{
   };
 
   const handleSubmit = () => {
+    setLoading(true);
     // Here you can send a request to your API endpoint with the input value
-    axios.post('your-api-endpoint', { input: inputValue })
+    axios.get(`http://localhost:3001/v1/crawlerlink?url=${inputValue}`)
       .then((response:any) => {
-        SelectModal.setUrls(response);
+        setLoading(false);
+        SelectModal.setUrls(response?.data);
         SelectModal.onOpen();
       })
       .catch(error => {
+        setLoading(false);
         console.error('Error:', error);
         // Handle error if needed
       });
   };
+
 
 
     return (
@@ -96,6 +102,20 @@ const IntroduceSections = ()=>{
     </div>
   
     </div>
+    {loading && (
+        <>
+          <div className={styles.loadingOverlay}></div> {/* Semi-transparent overlay */}
+          <div className={styles.loadingIndicator}>
+            <ClockLoader
+              color={"blue"}
+              loading={loading}
+              size={150}
+              aria-label="Loading Spinner"
+              data-testid="loader"
+            />
+          </div>
+        </>
+      )}
 
         </>
     )
