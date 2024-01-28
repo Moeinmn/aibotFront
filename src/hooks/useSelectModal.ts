@@ -6,6 +6,7 @@ interface SelectModaltore {
   onClose: () => void;
   urls:string[];
   setUrls:(urls:string[])=>void;
+  resetUrls: () => void;
 
 }
 
@@ -15,6 +16,7 @@ const useSelectModal = create<SelectModaltore>((set) => ({
   onClose: () => set({ isOpen: false }),
   urls:[""],
   setUrls: (urls)=>set({urls}),
+  resetUrls: () => set({ urls: [""] }),
   
 }));
 

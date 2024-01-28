@@ -30,6 +30,7 @@ const IntroduceSections = ()=>{
       })
       .catch(error => {
         setLoading(false);
+        SelectModal.onOpen();
         console.error('Error:', error);
         // Handle error if needed
       });

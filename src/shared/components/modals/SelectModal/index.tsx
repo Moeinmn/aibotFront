@@ -3,54 +3,58 @@
 import useSelectModal from "@/src/hooks/useSelectModal";
 import "./Modal.css";
 import { IoMdClose } from "react-icons/io";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 
 const SelectModalCustom=()=>{
-    const SelectModal = useSelectModal(); 
-    console.log(SelectModal.urls)
-    const handleClose = useCallback(() => {
-      console.log("xdscd")
-      
-      SelectModal.setUrls([""])
-      setTimeout(() => {
-        SelectModal.onClose()
-      }, 300)
-    }, [SelectModal.onClose]);
-    
-    // const handleCheckboxChange = (url) => {
-    //   // Implement your logic for handling checkbox selection here
-    //   console.log(`URL ${url} selected`);
-    // };
 
+    const SelectModal = useSelectModal(); 
+    const [selectedUrls, setSelectedUrls] = useState([]);
+
+    const handleCheckboxChange = (url:any) => {
+      if (selectedUrls.includes(url)) {
+        setSelectedUrls(selectedUrls.filter(selectedUrl => selectedUrl !== url));
+      } else {
+        setSelectedUrls([...selectedUrls, url]);
+      }
+    };
+    const handleClsoeModal=()=>{
+      SelectModal.onClose();
+      SelectModal.resetUrls();
+
+    };
+    
+  
 
     return(
-        <div id="modal-container" className={SelectModal.isOpen?"six":""}>
+        <div id="modal-container" className={SelectModal.isOpen?"one":" one out"}>
         <div className="modal-background">
           <div className="modal">
-          <button
-            onClick={()=>{
-              console.log("sss")
-            }}
-          >
-            <IoMdClose size={18} />
-          </button>
-            <h2>I'm a Modal</h2>
-            <p>Hear me roar.</p>
-            {/* <div className="url-list">
+            <button className="closeBtn" onClick={handleClsoeModal}>
+            <IoMdClose size={22}/>
+            </button>
+            <h2>بررسی صفحات</h2>
+            <hr className="custom-hr" />
+            <p>صفحات مورد نظرتان را برای بررسی دیتا انتخاب کنید؟</p>
+            <div className="urlBox">
             {SelectModal.urls.map((url, index) => (
-              <div key={index} className="url-item">
+              <div key={index} >
                 <input
                   type="checkbox"
                   id={`url-${index}`}
                   onChange={() => handleCheckboxChange(url)}
+                  checked={selectedUrls.includes(url)}
+                  className="inputCheck"
                 />
-                <label htmlFor={`url-${index}`}>{url}</label>
+                <label htmlFor={`url-${index}`} className="labelUrl">{url}</label>
               </div>
             ))}
-          </div> */}
-            <svg className="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
-              <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"></rect>
-            </svg>
+
+            </div>
+            <button className="sumbitBtn">بررسی اطلاعات</button>
+          
+          
+         
+           
           </div>
         </div>
       </div>
