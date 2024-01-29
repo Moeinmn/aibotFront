@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 
 interface SelectModaltore {
-  isOpen: boolean;
+  isOpen: any;
   onOpen: () => void;
   onClose: () => void;
   urls:string[];
@@ -11,7 +11,7 @@ interface SelectModaltore {
 }
 
 const useSelectModal = create<SelectModaltore>((set) => ({
-  isOpen: false,
+  isOpen: null,
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
   urls:[""],

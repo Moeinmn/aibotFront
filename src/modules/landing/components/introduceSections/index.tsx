@@ -3,9 +3,9 @@ import useSelectModal from "@/src/hooks/useSelectModal";
 import Logo from "./logo";
 import styles from './styles.module.css'
 import Image from "next/image";
-import { CSSProperties, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
-import { ClipLoader, ClockLoader } from "react-spinners";
+import { ClockLoader } from "react-spinners";
 
 
 
@@ -13,13 +13,38 @@ import { ClipLoader, ClockLoader } from "react-spinners";
 const IntroduceSections = ()=>{
   const [inputValue, setInputValue] = useState('');
   const [loading, setLoading] = useState(false);
+  const [inputError, setInputError] = useState('');
   const SelectModal = useSelectModal(); 
+
+  useEffect(() => {
+    setInputError('');
+  }, [inputValue]);
+
+  const validateInput = () => {
+    // Check if input value is empty
+    if (!inputValue.trim()) {
+      setInputError('آدرس وبسایت نمی‌تواند خالی باشد.');
+      return false;
+    }
+    // Check if input value is a valid URL
+    const urlPattern = /^(ftp|http|https):\/\/[^ "]+$/;
+    if (!urlPattern.test(inputValue)) {
+      setInputError('آدرس وبسایت وارد شده معتبر نیست.');
+      return false;
+    }
+    return true;
+  };
+
 
   const handleInputChange = (event:any) => {
     setInputValue(event.target.value);
   };
 
   const handleSubmit = () => {
+
+    if (!validateInput()) {
+      return; 
+    }
     setLoading(true);
     // Here you can send a request to your API endpoint with the input value
     axios.get(`http://localhost:3001/v1/crawlerlink?url=${inputValue}`)
@@ -83,11 +108,14 @@ const IntroduceSections = ()=>{
     </div>
 
 
+   
     <input type="text" value={inputValue} onChange={handleInputChange} className={styles.inputStyle} placeholder="آدرس وبسایت مورد نظرتان وارد کنید ..." />
-    
+    {inputError && <p className={styles.errorText}>{inputError}</p>} 
     <div className={styles.demoContainer}>
     <div>
-    <button className={styles.customButton} onClick={handleSubmit}>ساختن بات دمو</button>
+    <button className={`${styles.customButton} ${styles.pulseButton}`} onClick={handleSubmit}>
+      ساختن بات دمو
+    </button>
     </div>
  
     <div className={styles.imagePhone}>

@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     transition: "all 250ms",
     position: "fixed",
     top: 0,   
+    backgroundColor:"white",
     animation: "$headerSlideIn 0.6s ease-in-out",
     "&.white-theme .get-visual": {
       background: theme.palette.common.white,

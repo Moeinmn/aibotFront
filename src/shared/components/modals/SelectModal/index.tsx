@@ -3,12 +3,14 @@
 import useSelectModal from "@/src/hooks/useSelectModal";
 import "./Modal.css";
 import { IoMdClose } from "react-icons/io";
-import { useCallback, useState } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const SelectModalCustom=()=>{
 
     const SelectModal = useSelectModal(); 
     const [selectedUrls, setSelectedUrls] = useState([]);
+    const [selectError, setSelectError] = useState('');
 
     const handleCheckboxChange = (url:any) => {
       if (selectedUrls.includes(url)) {
@@ -18,15 +20,40 @@ const SelectModalCustom=()=>{
       }
     };
     const handleClsoeModal=()=>{
-      SelectModal.onClose();
-      SelectModal.resetUrls();
-
+     
     };
+    const handleSubmit=()=>{
+      if(selectedUrls.length==0){
+        setSelectError("لطفا حداقل یک لینک را انتخاب کنید")
+        return
+      }
+      // setLoading(true);
+    
+      axios.post(`http://localhost:3001/v1/crawlerlink`,{url:selectedUrls})
+        .then((response:any) => {
+          SelectModal.onClose();
+          SelectModal.resetUrls();
+          setSelectedUrls([])
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+
+
+
+     
+      SelectModal.onClose();
+      setSelectedUrls([])
+    }
+
+    useEffect(()=>{
+      setSelectError("")
+    },[selectedUrls])
     
   
 
     return(
-        <div id="modal-container" className={SelectModal.isOpen?"one":" one out"}>
+      <div id="modal-container" className={SelectModal.isOpen === null ? "" : SelectModal.isOpen ? "one" : "one out"}>
         <div className="modal-background">
           <div className="modal">
             <button className="closeBtn" onClick={handleClsoeModal}>
@@ -50,7 +77,8 @@ const SelectModalCustom=()=>{
             ))}
 
             </div>
-            <button className="sumbitBtn">بررسی اطلاعات</button>
+            { selectError && <p style={{fontSize:"12px"}}>{selectError}</p>} 
+            <button className="sumbitBtn" onClick={handleSubmit}>بررسی اطلاعات</button>
           
           
          
