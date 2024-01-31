@@ -1,0 +1,37 @@
+.message-form {
+    padding-top: 1rem; /* py-4 */
+    padding-bottom: 1rem; /* py-4 */
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+    background-color: #ffffff; /* bg-white */
+    border-top-width: 1px; /* border-t */
+    display: flex;
+    align-items: center; /* items-center */
+    gap: 0.5rem; /* gap-2 */
+  }
+  
+  .message-form-lg-gap {
+    gap: 1rem; /* lg:gap-4 */
+  }
+  
+  .message-form-rounded {
+    border-bottom-left-radius: 0.375rem; /* rounded-b-lg */
+    border-bottom-right-radius: 0.375rem; /* rounded-b-lg */
+  }
+  
+  .message-input {
+    width: 100%;
+  }
+  
+  .submit-button {
+    border-radius: 9999px; /* rounded-full */
+    padding: 0.5rem; /* p-2 */
+    background-color: #4fd1c5; /* bg-sky-500 */
+    cursor: pointer; /* cursor-pointer */
+    transition: background-color 0.3s; /* transition */
+  }
+  
+  .submit-button:hover {
+    background-color: #38b2ac; /* hover:bg-sky-600 */
+  }
+  

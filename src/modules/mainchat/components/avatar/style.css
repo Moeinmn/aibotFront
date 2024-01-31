@@ -1,0 +1,35 @@
+.avatar-container {
+    position: relative;
+  }
+  
+  .avatar-image {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
+    height: 2.25rem; /* 9px */
+    width: 2.25rem; /* 9px */
+  }
+  
+  .avatar-image-md {
+    height: 2.75rem; /* 11px */
+    width: 2.75rem; /* 11px */
+  }
+  
+  .active-indicator {
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    background-color: #34d399; /* Green-500 */
+    border: 2px solid #ffffff; /* White */
+    top: 0;
+    right: 0;
+    height: 0.5rem; /* 2px */
+    width: 0.5rem; /* 2px */
+  }
+  
+  .active-indicator-md {
+    height: 0.75rem; /* 3px */
+    width: 0.75rem; /* 3px */
+  }
+  
