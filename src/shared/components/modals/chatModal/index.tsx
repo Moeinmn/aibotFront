@@ -49,7 +49,7 @@ const ChatModalCustom=()=>{
   
 
     return(
-      <div id="modal-container" className={ true ? "one" : "one out"}>
+      <div id="modal-container" >
         <div className="modal-background">
           <div className="modal">
           

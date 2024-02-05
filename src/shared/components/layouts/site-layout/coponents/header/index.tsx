@@ -6,11 +6,13 @@ import { Box, Button, Container, Drawer, Hidden } from "@material-ui/core";
 import { HambergerMenu } from "iconsax-react";
 import clsx from "clsx";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 
 
   const Header = () => {
+    const router = useRouter();
     const styles = useStyles();
     // State to manage whether the menu is active or not
     const [isDrawerOpen, toggleDrawer] = useState(false);
@@ -114,8 +116,9 @@ import Link from "next/link";
               
                 <>
                   <Box display={"inline"}>
-                    <Link href={"/register"} >
+                    <Link href={"/auth/register"} >
                       <Button
+                        onClick={() => router.push('/auth/register')}
                         variant="contained"
                         color="primary"
                         className="register-btn"
@@ -174,7 +177,7 @@ import Link from "next/link";
    
                   <>
                     <Box display={"inline"} mr={2}>
-                      <Link href={"/"}>
+                      <Link href={"/auth/login"}>
                         <Button
                         //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
                           // variant="outlined"
@@ -185,7 +188,7 @@ import Link from "next/link";
                         </Button>
                       </Link>
                     </Box>
-                    <Link href={"/"}>
+                    <Link href={"/auth/register"}>
                       <Button
                         // id={ELEMENTS.HEADER_REGISTER_BUTTON}
                         variant="outlined"

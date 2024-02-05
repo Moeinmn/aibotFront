@@ -1,0 +1,17 @@
+.root{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    margin-top: 70px;
+    height: 800px;
+    overflow: hidden;
+}
+
+
+@media (max-width: 850px) {
+    #vector-container {
+      display: none;
+    }
+
+  }
