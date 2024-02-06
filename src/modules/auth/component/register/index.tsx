@@ -1,8 +1,32 @@
+'use client'
 import Image from "next/image";
 import "./style.css";
+import { useForm } from "react-hook-form";
+import IUserData from "../../models/IUserData";
+import useRegister from "../hooks/register";
+
+
 
 
 const Register=()=>{
+  const { 
+    register, 
+    handleSubmit,
+    formState: {
+      errors,
+    },
+  } = useForm ({
+    defaultValues: {
+      name:'',
+      lastName:'',
+      email: '',
+      password: ''
+    },
+  });
+  const registers = useRegister();
+  
+  const onSubmit = (user: IUserData) => registers.register(user);
+
     return (
       <>
       <div className="root"> 
@@ -40,7 +64,7 @@ const Register=()=>{
               flexDirection:'column',
               rowGap:"25px"
             }}>
-            <input type="text" placeholder="نام" style={{
+            <input {...register("name",{required:true})} type="text" placeholder="نام" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -48,7 +72,7 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-            <input type="text" placeholder="نام خانوادگی" style={{
+            <input  {...register("lastName",{required:true})} type="text" placeholder="نام خانوادگی" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -56,7 +80,7 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-              <input type="text" placeholder="ایمیل" style={{
+              <input  {...register("email",{required:true})} type="text" placeholder="ایمیل" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -64,7 +88,7 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-              <input type="text" placeholder="رمز عبور" style={{
+              <input  {...register("password",{required:true})} type="text" placeholder="رمز عبور" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -72,7 +96,9 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-             <button  style={{
+             <button
+              onClick={handleSubmit(onSubmit)} 
+              style={{
               background:"#1D4ED8",
               color:'white',
               padding:"15px",
