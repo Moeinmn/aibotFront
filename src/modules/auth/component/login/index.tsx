@@ -1,7 +1,37 @@
+'use client'
+
 import Image from "next/image";
 import "./style.css";
+import { 
+  FieldValues, 
+  SubmitHandler, 
+  useForm
+} from "react-hook-form";
+import IUserLogin from "../../models/IUserLogin";
+import useLogin from "../hooks/login";
 
-const Register=()=>{
+
+
+const Login=()=>{
+  const login = useLogin();
+
+  const { 
+    register, 
+    handleSubmit,
+    formState: {
+      errors,
+    },
+  } = useForm<FieldValues>({
+    defaultValues: {
+      email: '',
+      password: ''
+    },
+  });
+
+  const onSubmit = (user: IUserLogin) =>
+    login.login(user);
+
+ 
     return (
       <>
       <div className="root"> 
@@ -23,14 +53,14 @@ const Register=()=>{
           }}>
             <h2 style={{
               fontSize:"32px"
-            }}>ایجاد حساب کاربری</h2>
+            }}> ورود به چت بات </h2>
             <p style={{
               position:"relative",
               top:"16px",
               fontSize:"13px"
-            }}>از قبل حساب کابری دارید؟ <span style={{
+            }}>حساب کاربری ندارید؟<span style={{
               color:"blue"
-            }}>وارد شوید</span></p>
+            }}>عضو شوید</span></p>
 
             <div className="register" style={{
               position:'relative',
@@ -39,7 +69,8 @@ const Register=()=>{
               flexDirection:'column',
               rowGap:"25px"
             }}>
-            <input type="text" placeholder="نام" style={{
+
+              <input  {...register("email",{required:true})} type="text" placeholder="ایمیل" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -47,7 +78,7 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-            <input type="text" placeholder="نام خانوادگی" style={{
+              <input {...register("password",{required:true})} type="text" placeholder="رمز عبور" style={{
               width:"84%",
               padding:"15px",
               border:"solid",
@@ -55,23 +86,9 @@ const Register=()=>{
               borderRadius:"10px"
 
             }} />
-              <input type="text" placeholder="ایمیل" style={{
-              width:"84%",
-              padding:"15px",
-              border:"solid",
-              borderWidth:"0.4px",
-              borderRadius:"10px"
-
-            }} />
-              <input type="text" placeholder="رمز عبور" style={{
-              width:"84%",
-              padding:"15px",
-              border:"solid",
-              borderWidth:"0.4px",
-              borderRadius:"10px"
-
-            }} />
-             <button  style={{
+             <button
+              onClick={handleSubmit(onSubmit)}
+              style={{
               background:"#1D4ED8",
               color:'white',
               padding:"15px",
@@ -81,7 +98,7 @@ const Register=()=>{
               marginTop:"22px"
 
              }}>
-              عضویت
+              ورود به پنل
             </button>
             </div>
           </div>
@@ -105,7 +122,7 @@ const Register=()=>{
           }}>
             
             <Image
-                    src="/images/register.jpg" 
+                    src="/images/login.jpg" 
                     height="400" 
                     width="500" 
                     alt="Logo" 
@@ -127,4 +144,4 @@ const Register=()=>{
 }
 
 
-export default Register;
+export default Login;

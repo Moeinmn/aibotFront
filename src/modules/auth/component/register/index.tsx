@@ -1,9 +1,8 @@
 import Image from "next/image";
 import "./style.css";
-import { useRouter } from "next/router";
 
-const Login=()=>{
-    // const router = useRouter();
+
+const Register=()=>{
     return (
       <>
       <div className="root"> 
@@ -25,14 +24,14 @@ const Login=()=>{
           }}>
             <h2 style={{
               fontSize:"32px"
-            }}> ورود به چت بات </h2>
+            }}>ایجاد حساب کاربری</h2>
             <p style={{
               position:"relative",
               top:"16px",
               fontSize:"13px"
-            }}>حساب کاربری ندارید؟<span style={{
+            }}>از قبل حساب کابری دارید؟ <span style={{
               color:"blue"
-            }}>عضو شوید</span></p>
+            }}>وارد شوید</span></p>
 
             <div className="register" style={{
               position:'relative',
@@ -41,7 +40,22 @@ const Login=()=>{
               flexDirection:'column',
               rowGap:"25px"
             }}>
+            <input type="text" placeholder="نام" style={{
+              width:"84%",
+              padding:"15px",
+              border:"solid",
+              borderWidth:"0.4px",
+              borderRadius:"10px"
 
+            }} />
+            <input type="text" placeholder="نام خانوادگی" style={{
+              width:"84%",
+              padding:"15px",
+              border:"solid",
+              borderWidth:"0.4px",
+              borderRadius:"10px"
+
+            }} />
               <input type="text" placeholder="ایمیل" style={{
               width:"84%",
               padding:"15px",
@@ -68,7 +82,7 @@ const Login=()=>{
               marginTop:"22px"
 
              }}>
-              ورود به پنل
+              عضویت
             </button>
             </div>
           </div>
@@ -92,7 +106,7 @@ const Login=()=>{
           }}>
             
             <Image
-                    src="/images/login.jpg" 
+                    src="/images/register.jpg" 
                     height="400" 
                     width="500" 
                     alt="Logo" 
@@ -114,4 +128,4 @@ const Login=()=>{
 }
 
 
-export default Login;
+export default Register;

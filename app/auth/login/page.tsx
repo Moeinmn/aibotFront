@@ -1,5 +1,5 @@
-import Login from "@/src/modules/auth/login";
-import Register from "@/src/modules/auth/register";
+import Login from "@/src/modules/auth/component/login";
+import Register from "@/src/modules/auth/component/register";
 import { NextPage } from "next";
 
 const LoginPage:NextPage=()=>{

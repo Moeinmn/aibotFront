@@ -1,4 +1,4 @@
-import Register from "@/src/modules/auth/register";
+import Register from "@/src/modules/auth/component/register";
 import { NextPage } from "next";
 
 const RegisterPage:NextPage=()=>{
