@@ -35,9 +35,6 @@ const Login=()=>{
     return (
       <>
       <div className="root"> 
-      <div>
-
-      </div>
         <div id="form-section" style={{
           // backgroundColor:"red",
           width:"100%",

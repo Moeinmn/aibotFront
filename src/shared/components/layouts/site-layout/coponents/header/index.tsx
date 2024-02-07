@@ -7,6 +7,7 @@ import { HambergerMenu } from "iconsax-react";
 import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import useUser from "@/src/hooks/useUser";
 
 
 
@@ -14,6 +15,7 @@ import { useRouter } from "next/navigation";
   const Header = () => {
     const router = useRouter();
     const styles = useStyles();
+    const user = useUser();
     // State to manage whether the menu is active or not
     const [isDrawerOpen, toggleDrawer] = useState(false);
 
@@ -113,8 +115,19 @@ import { useRouter } from "next/navigation";
               <Link href={"/"} >
                 <Logo />
               </Link>
-              
-                <>
+                {user.isLogin() ? (
+                   <Link href={"/mybots"}>
+                   <Button
+                   //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
+                     // variant="outlined"
+                     color="inherit"
+                     className={styles.headBtns}
+                   >
+                      ورود به پنل
+                   </Button>
+                 </Link>
+                ):(
+                  <>
                   <Box display={"inline"}>
                     <Link href={"/auth/register"} >
                       <Button
@@ -128,6 +141,9 @@ import { useRouter } from "next/navigation";
                     </Link>
                   </Box>
                 </>
+                )}
+              
+                
               
             </Box>
           </header>
@@ -174,31 +190,45 @@ import { useRouter } from "next/navigation";
                 </div>
               </div>
               <div>
-   
+                {user.isLogin() ? (
+                     <Link href={"/mybots"}>
+                     <Button
+                     //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
+                       // variant="outlined"
+                       color="inherit"
+                       className={styles.headBtns}
+                     >
+                        ورود به پنل
+                     </Button>
+                   </Link>
+                ):(
                   <>
-                    <Box display={"inline"} mr={2}>
-                      <Link href={"/auth/login"}>
-                        <Button
-                        //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
-                          // variant="outlined"
-                          color="inherit"
-                          className={styles.headBtns}
-                        >
-                          ورود
-                        </Button>
-                      </Link>
-                    </Box>
-                    <Link href={"/auth/register"}>
+                  <Box display={"inline"} mr={2}>
+                    <Link href={"/auth/login"}>
                       <Button
-                        // id={ELEMENTS.HEADER_REGISTER_BUTTON}
-                        variant="outlined"
+                      //   id={ELEMENTS.HEADER_LOGIN_BUTTON}
+                        // variant="outlined"
                         color="inherit"
-                        className={clsx( styles.registerBtn)}
+                        className={styles.headBtns}
                       >
-                        ثبت نام
+                        ورود
                       </Button>
                     </Link>
-                  </>
+                  </Box>
+                  <Link href={"/auth/register"}>
+                    <Button
+                      // id={ELEMENTS.HEADER_REGISTER_BUTTON}
+                      variant="outlined"
+                      color="inherit"
+                      className={clsx( styles.registerBtn)}
+                    >
+                      ثبت نام
+                    </Button>
+                  </Link>
+                </>
+                )}
+   
+                
                 
               </div>
             </nav>
