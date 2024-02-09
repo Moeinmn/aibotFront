@@ -25,24 +25,24 @@ export default function RootLayout({
   const router = useRouter()
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const goLogin=()=>{
-      if (pathname !== "/" && pathname !== "/auth/login" && pathname !== "/auth/register") {
-        router.replace("/auth/login")
-      }
-    }
-    user
-        .refresh()
+  //   const goLogin=()=>{
+  //     if (pathname !== "/" && pathname !== "/auth/login" && pathname !== "/auth/register") {
+  //       router.replace("/auth/login")
+  //     }
+  //   }
+  //   user
+  //       .refresh()
     
-        .catch(() => {
+  //       .catch(() => {
      
-          goLogin();
-        })
-        .finally(() => {
-          // setIsLoading(false);
-        });
-  },[pathname])
+  //         goLogin();
+  //       })
+  //       .finally(() => {
+  //         // setIsLoading(false);
+  //       });
+  // },[pathname])
 
   return (
     <SiteLayout>

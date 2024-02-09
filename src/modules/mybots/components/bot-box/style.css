@@ -1,0 +1,64 @@
+.paperContainer {
+    position: relative;
+    cursor: pointer;
+    box-shadow: none;
+    border: 1px solid #E9ECEF;
+    transition: ease-out 150ms;
+    overflow: hidden;
+}
+
+.paperContainer:hover {
+    border-color: #1976D2; /* Assuming theme.palette.primary.main is #1976D2 */
+}
+
+.paperContainer:hover .image img {
+    transform: scale(1.1);
+}
+
+.paperContainer:hover .imageBox::after {
+    opacity: 1;
+}
+
+.paperContainer:hover .title {
+    color: #1976D2; /* Assuming theme.palette.primary.main is #1976D2 */
+}
+
+.paperContainer.delete {
+    color: #fe2e2f !important;
+}
+
+.imageContainer {
+    box-shadow: inset 0px 2px 7px rgba(255, 255, 255, 0.75);
+    background: #F9F9F9;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 4;
+    position: relative;
+}
+
+.imageContainer img {
+    transition: ease-out 150ms;
+}
+
+.imageContainer::after {
+    content: 'تنظیمات';
+    padding-left: 16px; /* Assuming theme.spacing(2) is equivalent to 16px */
+    padding-right: 16px; /* Assuming theme.spacing(2) is equivalent to 16px */
+    padding-top: 12px; /* Assuming theme.spacing(1.5) is equivalent to 12px */
+    padding-bottom: 12px; /* Assuming theme.spacing(1.5) is equivalent to 12px */
+    background-color: rgba(0, 97, 247, 0.71); /* #0061F7B5 with 71% opacity */
+    backdrop-filter: blur(20px);
+    color: white;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    border-radius: 8px;
+    opacity: 0;
+    transition: ease-in 150ms;
+}
