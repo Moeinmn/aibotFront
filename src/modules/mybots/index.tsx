@@ -7,26 +7,16 @@ import BotBox from "./components/bot-box";
 import { Box } from "@material-ui/core";
 import { SearchNormal1 } from "iconsax-react";
 import useStyles from "./components/style";
+import Pagination from '@mui/material/Pagination';
+import useMyBots from "./hooks/my-bots";
 
 
 const MyBots=()=>{
   const styles = useStyles();
-  const projectList=[
-    {
-      type:"instagram",
-      name:"plotset.com",
-    },
-    {
-      type:"instagram",
-      name:"plotset.com",
-    },    {
-      type:"instagram",
-      name:"plotset.com",
-    },    {
-      type:"instagram",
-      name:"plotset.com",
-    }
-  ]
+  const myBots=useMyBots();
+  const botList=myBots.bots;
+
+
     return(
       <Container style={{
         marginTop:"90px"
@@ -69,36 +59,40 @@ const MyBots=()=>{
         </div>
 
       <Paper 
-        elevation={2}
+        elevation={3}
         style={{
-          marginTop:"50px"
+          marginTop:"50px",
+          borderRadius:"8px",
+          paddingLeft:"32px",
+          paddingRight:"32px",
+          paddingTop:"24px",
+          paddingBottom:"24px",
+
+
         }}
        >
+          <Box
+             style={{
+              display:"flex",
+              justifyContent:'center'
+             }}
+                >
+                  <Box mx={1} pl={2} className="searchBox">
+                    <SearchNormal1 color="#8F8F8F" />
+                    <Box style={{
+                      marginRight:"20px"
+                    }} display="flex" width="100%">
+                      <input
+                        width={"100%"}
+                        placeholder="جستوجو کردن ..."
+                        type="text"
+                      />
+                    </Box>
+                  </Box>
+         </Box>
         
-         <Box
-              display={"flex"}
-              width="100%"
-              justifyContent={"center"}
-              alignItems={"center"}
-              mb={2}
-            >
-              <Box mx={1} pl={2} className="searchBox">
-                <SearchNormal1 color="#8F8F8F" />
-                <Box ml={2} my={2} display="flex" width="100%">
-                  <input
-                    width={"100%"}
-                    placeholder="Search ..."
-                    type="text"
-                    onChange={(e) =>
-                    console.log(e)
-                    }
-                  />
-                </Box>
-              </Box>
-            
-          </Box>
-         <Grid container  spacing={2} mt={2}>
-          {projectList.map((item,bindex)=>{
+         <Grid container  display={"flex"} spacing={2} mt={2}>
+          {botList.map((item,bindex)=>{
             return (
               <Grid
                     
@@ -112,13 +106,27 @@ const MyBots=()=>{
                     lg={3}
                     xl={2}
                   >
-                    <BotBox/>
+                    <BotBox
+                    type={item.type}
+                    botsData={item}
+                    />
                     
                   </Grid>
             )
           })}
 
+
          </Grid>
+         
+         <Box style={{
+          display:"flex",
+          alignItems:'center',
+          justifyContent:'center',
+          marginTop:"40px"
+         }}>
+          <Pagination count={10} color="primary" />
+         </Box>
+
 
       </Paper>
 
