@@ -8,7 +8,21 @@ import "./style.css";
 import ReactTimeAgo from "react-time-ago";
 
 
-const BotBox=()=>{
+interface IBotBoxProps {
+  type: "instagram" | "website";
+  botsData:any;
+  onDelete?: (projectId: number) => any;
+  onDuplicate?: (projectId: number) => any;
+}
+
+let listImage={
+  website:"https://img.freepik.com/premium-vector/blue-square-with-globe-icon-it_876006-15.jpg",
+  instagram:"https://img.freepik.com/free-vector/instagram-icon_1057-2227.jpg?size=338&ext=jpg&ga=GA1.1.87170709.1707523200&semt=ais"
+}
+
+
+
+const BotBox=(props:IBotBoxProps)=>{
   const styles = useStyles();
 
     return(
@@ -30,7 +44,7 @@ const BotBox=()=>{
               width={208}
               height={147}
               alt="axs"
-              src={"https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRYT2_qpM81JX8FdDi53mc-ZNIGhwVGlDtG5uTuuHU9K6rTaRZqONIPL7tEiwLb8t4D4mBbt0-UL5ijZBU"}
+              src={props.type=="instagram"?listImage["instagram"]:listImage["website"]}
             />
           </Box>
         <Box width={"100%"}>
@@ -45,7 +59,7 @@ const BotBox=()=>{
        
             <Box display={"flex"} flexDirection={"column"}>
               <Typography className="title" variant={"body1"}>
-               plotset.com
+           {props.botsData.name}
               </Typography>
               <Typography
                 variant={"caption"}

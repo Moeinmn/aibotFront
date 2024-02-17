@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import useUser from '@/src/hooks/useUser'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/navigation'
+import PanelLayout from '@/src/shared/components/layouts/panel/panel-lauout'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -42,11 +43,26 @@ export default function RootLayout({
   //       .finally(() => {
   //         // setIsLoading(false);
   //       });
-  // },[pathname])
+  // },[pathname]);
+
+
+  const isDashboardRoute = pathname.startsWith('/dashboard');
+
 
   return (
-    <SiteLayout>
-    {children}
-    </SiteLayout>
-  )
+    <>
+      {isDashboardRoute ? (
+       <PanelLayout>
+         {children}
+       </PanelLayout>
+      ) : (
+        <SiteLayout>
+          {children}
+        </SiteLayout>
+      )}
+    </>
+  );
+  
+  
+
 }

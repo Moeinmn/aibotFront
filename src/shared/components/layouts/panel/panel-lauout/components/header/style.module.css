@@ -1,16 +1,3 @@
-#bot-container{
-    
-  
-        display: flex;
-        flex-direction: row;
-        position: relative;
-        width: 100%;
-        margin-top: 70px;
-        height: 800px;
-        overflow: hidden;
-        /* background-color: aqua; */
-    
-}
 .searchBox {
     width: 48%;
     display: flex;
@@ -34,4 +21,3 @@
   .searchBox input::placeholder {
     color: #CBCBCB;
   }
-  
