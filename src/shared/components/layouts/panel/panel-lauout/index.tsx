@@ -5,10 +5,14 @@ const PanelLayout = (props:any) => {
   return (
 
     <html lang="fa" dir="rtl">
+         <body >
+         <Header {...props.headerProps} />
+         {props.children}
+
+         </body>
     
       
-      <Header {...props.headerProps} />
-      {props.children}
+      
    
     </html>
 

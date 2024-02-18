@@ -1,3 +1,5 @@
+"use client"
+
 import { FC } from "react";
 import Navbar from "./components/navbar";
 
@@ -6,7 +8,7 @@ const Layout:FC=(props:any)=>{
         <>
         <div>
             <Navbar/>
-            <main>{props.children}</main>
+            <div>{props.children}</div>
 
         </div>
         </>

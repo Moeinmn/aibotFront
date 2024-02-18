@@ -1,18 +1,45 @@
-'use client'
+"use client"
 
-import Link from "next/link";
+import TabLink from "./component/tablink";
+
+
+
+const menuItems = 
+  [
+        {
+          title: "فایل",
+          store:"File"
+        },
+        {
+          title: "متن",
+          store:"Text"
+        },
+        {
+          title: "وبسایت",
+          store:"Website"
+        },
+        {
+          title: "پرسش و پاسخ",
+          store:"QandA"
+        }
+   ]
+
 
 const Navbar=()=>{
+   
     return(
-        <>
         <div>
-            <div onClick={() => { console.log("test") }} >salam</div>
-            <div >salam</div>
-            <div >salam</div>
-            <div >salam</div>
+            <ul style={{display:'flex',columnGap:"110px"}}>
+             {menuItems.map((item)=>{
+                return(
+                    <li><TabLink item={item}/></li>
+                )
+             })}
+            </ul>
+            <hr style={{marginTop:"15px"}}></hr>
 
         </div>
-        </>
+        
 
     )
     

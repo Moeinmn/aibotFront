@@ -16,17 +16,17 @@ const menuItems = [
         },
         {
           title: "آموزش ربات",
-          path: "/dashboard/users",
+          path: "/dashboard/tarin",
           icon: <MdEditDocument />,
         },
         {
           title: "پیام های من",
-          path: "/dashboard/products",
+          path: "/dashboard/mymessage",
           icon: <MdMessage />,
         },
         {
           title: "پروفایل من",
-          path: "/dashboard/transactions",
+          path: "/dashboard/profile",
           icon: <CgProfile />,
         },
       ],

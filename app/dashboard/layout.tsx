@@ -12,7 +12,7 @@ const Layout=({
     <div style={{display:"flex"}}>
         <div style={{
             flex:"1",
-            // background:"gray",
+            background:"#f2f2f2",
             padding:"20px",
             minHeight:"100vh",
         }}>

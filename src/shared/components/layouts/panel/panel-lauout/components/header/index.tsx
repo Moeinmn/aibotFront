@@ -28,7 +28,7 @@ const Header = (props:any) => {
   return (
     <>
     <div style={{
-        // backgroundColor:"red",
+            background:"#f2f2f2",
         height:"80px",
         // position:"fixed",
         width:"100%",
