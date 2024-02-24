@@ -1,0 +1,11 @@
+.elementBox {
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    border-radius: 15px;
+    transition: border-color 0.4s; 
+}
+
+.elementBox:hover {
+    border-color: #475BE8 
+}
