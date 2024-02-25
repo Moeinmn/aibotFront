@@ -1,0 +1,14 @@
+.addBtn{
+    padding: 10px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 8px;
+}
+.deleteBtn{
+    padding: 10px;
+    background-color:red;
+    color: black;
+    border: none;
+    border-radius: 8px;
+}

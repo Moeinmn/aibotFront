@@ -9,7 +9,9 @@ import "./style.css";
 const Train=()=>{
     const viewController = useStoreViewController();
     const tabsInfo={
-        File:"فایل ها"
+        File:"فایل ها",
+        Text:"متن ",
+        Website:"لینک ها"
     }
 
     const tabs=[
@@ -20,6 +22,10 @@ const Train=()=>{
         {
             id:"Text",
             component: dynamic(() => import("../train/componenst/text"))
+        },
+        {
+            id:"Website",
+            component: dynamic(() => import("../train/componenst/websiteLink"))
         }
     ];
 
