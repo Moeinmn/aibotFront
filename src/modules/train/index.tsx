@@ -11,7 +11,8 @@ const Train=()=>{
     const tabsInfo={
         File:"فایل ها",
         Text:"متن ",
-        Website:"لینک ها"
+        Website:"لینک ها",
+        QandA:"پرسش و پاسخ ها"
     }
 
     const tabs=[
@@ -26,6 +27,10 @@ const Train=()=>{
         {
             id:"Website",
             component: dynamic(() => import("../train/componenst/websiteLink"))
+        },
+        {
+            id:"QandA",
+            component: dynamic(() => import("../train/componenst/qanda"))
         }
     ];
 
