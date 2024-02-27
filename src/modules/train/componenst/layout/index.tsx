@@ -2,6 +2,7 @@
 
 import { FC } from "react";
 import Navbar from "./components/navbar";
+import SourceCard from "./components/SourceCard";
 
 const Layout:FC=(props:any)=>{
  return(
@@ -12,6 +13,7 @@ const Layout:FC=(props:any)=>{
             <div>{props.children}</div>
         </div>
         <div>
+          <SourceCard/>
           
         </div>
 
