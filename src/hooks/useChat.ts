@@ -9,7 +9,8 @@ interface chatStore {
   setLoading:(loading:boolean) =>void;
 }
 
-const useChat = create<chatStore>((set) => ({
+const useChat = create<chatStore>( 
+  (set) => ({
   isLoading: false,
   messages: [
         { body: " سلام! 😊 خوش آمدید! امیدوارم که روزتان پر از خوبی‌ها و شادی باشد. اگر سوالی یا نیاز به کمک دارید، خیالتان راحت! من در اینجا هستم تا کمک کنم.", sender: "bot", id: 2 },

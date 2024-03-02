@@ -2,6 +2,7 @@
 import React, { FC, ReactNode } from "react";
 import {
   AppBar,
+  Avatar,
   Box,
   IconButton,
   Toolbar,
@@ -27,9 +28,9 @@ const Header = (props:any) => {
   return (
     <>
     <div style={{
-        // backgroundColor:"red",
+            background:"#f2f2f2",
         height:"80px",
-        position:"fixed",
+        // position:"fixed",
         width:"100%",
         top:"0"
     }}>
@@ -37,7 +38,8 @@ const Header = (props:any) => {
                display: "flex",
                justifyContent: "space-between",
                overflow: "hidden",
-               height:"inherit"
+               height:"inherit",
+               alignItems:"center"
 
         }}>
             <div style={{
@@ -54,7 +56,7 @@ const Header = (props:any) => {
               </Box>
             )}
 
-            <div>
+            <div style={{marginRight:"18px"}}>
             <Image
     
                  src="/logo.svg" 
@@ -69,9 +71,11 @@ const Header = (props:any) => {
 
             </div>
 
-            <div>
+            <div style={{
+              width:"30%"
+            }}>
                 <div style={{
-                       width: "48%",
+                       width: "100%",
                        display:"flex"
 
                 }} className={styles.searchBox}>
@@ -88,6 +92,12 @@ const Header = (props:any) => {
 
 
                 </div>
+            </div>
+
+            <div style={{marginLeft:"50px"}}>
+            <Avatar
+            style={{ width: 40, height: 40, borderRadius:"10px", borderStyle:"solid", borderWidth:"1.5px" }}
+               />
             </div>
 
         </div>

@@ -1,0 +1,20 @@
+.addBtn{
+    padding: 8px;
+    background-color:#475BE8;
+    color:#ffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+}
+.deleteBtn{
+    padding: 8px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.deleteBtn:hover,
+.deleteBtn:active {
+    background-color: rgba(255, 0, 0, 0.1);
+}

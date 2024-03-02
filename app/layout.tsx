@@ -21,9 +21,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const user = useUser();
   const pathname = usePathname()
-  const router = useRouter()
+
 
 
   // useEffect(() => {
