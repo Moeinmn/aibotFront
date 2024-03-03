@@ -15,6 +15,7 @@ const MyBots=()=>{
   const styles = useStyles();
   const myBots=useMyBots();
   const botList=myBots.bots;
+  console.log(botList)
 
 
     return(

@@ -6,6 +6,7 @@ import clsx from "clsx";
 import Divider from '@mui/material/Divider';
 import "./style.css";
 import ReactTimeAgo from "react-time-ago";
+import Link from "next/link";
 
 
 interface IBotBoxProps {
@@ -26,7 +27,8 @@ const BotBox=(props:IBotBoxProps)=>{
   const styles = useStyles();
 
     return(
-        <Paper className="paperContainer" variant={"outlined"}>
+    <Paper className="paperContainer" variant={"outlined"}>
+      <Link href={'/dashbord'}>
       <Box
         sx={{
           display: "flex",
@@ -81,6 +83,8 @@ const BotBox=(props:IBotBoxProps)=>{
         </Box>
        
       </Box>
+      </Link>
+     
     </Paper>
     )
 };
