@@ -10,7 +10,7 @@ const SiteLayout = (props:any) => {
  
   return (
 
-    <html lang="fa" dir="rtl">
+    <html lang="git statfa" dir="rtl">
     <body className={myFont.className}>
       
       <Header {...props.headerProps} />
