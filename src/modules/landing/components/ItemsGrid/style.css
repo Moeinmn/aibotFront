@@ -1,0 +1,23 @@
+
+.wrapper-image-path {
+    z-index: -1;
+    grid-row-gap: 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+}
+
+.first-col-animation{
+will-change: opacity, transform;
+    opacity: 1;
+    transform: translate3d(0px, 57.1004px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
+
+.second-col-animation{
+    will-change: opacity, transform;
+    opacity: 1;
+    transform: translate3d(0px, 2.84732px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+    transform-style: preserve-3d;
+}
