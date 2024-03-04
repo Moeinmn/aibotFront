@@ -1,3 +1,4 @@
+import Footer from "../../common/Footer";
 import Header from "./coponents/header";
 import localFont from "next/font/local"
 
@@ -15,7 +16,7 @@ const SiteLayout = (props:any) => {
       <Header {...props.headerProps} />
       {props.children}
    
-
+      <Footer/>
     </body>
     </html>
 
