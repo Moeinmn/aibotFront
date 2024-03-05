@@ -1,11 +1,27 @@
 "use client";
+import { useEffect } from "react";
 import "./style.css";
 
+import { useSpring, animated } from 'react-spring';
+
 const ItemsGrid = () => {
+
+  const [{ scrollY }, setScrollY] = useSpring(() => ({ scrollY: 300 }));
+
+    // Update scrollY value on scroll
+    useEffect(()=>{
+      window.addEventListener('scroll', () => {
+        setScrollY({ scrollY: window.scrollY });
+    });
+    },[])
+
   return (
     <>
+    <div className={'box-image-path'}>
       <div className="item-image-path">
-        <div className="wrapper-image-path _1 first-col-animation">
+        <animated.div className="wrapper-image-path " style={{
+                    transform: scrollY.interpolate(y => `translate3d(0px, ${y * 0.25}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`)
+                }}>
           <div className="template-image-path">
             <div className="icon-template-path">
               <div className="w-embed">
@@ -84,8 +100,8 @@ const ItemsGrid = () => {
               </a>
             </div>
           </div>
-        </div>
-        <div className="wrapper-image-path _2 second-col-animation">
+        </animated.div>
+        <div className="wrapper-image-path second-col-animation">
           <div className="template-image-path">
             <div className="icon-template-path">
               <div className="w-embed">
@@ -182,7 +198,7 @@ const ItemsGrid = () => {
             </div>
           </div>
         </div>
-        <div className="wrapper-image-path _3">
+        <div className="wrapper-image-path third-col-animation">
           <div className="template-image-path">
             <div className="icon-template-path">
               <div className="w-embed">
@@ -332,7 +348,7 @@ const ItemsGrid = () => {
             </div>
           </div>
         </div>
-        <div className="wrapper-image-path _4">
+        <div className="wrapper-image-path forth-col-animation">
           <div className="template-image-path">
             <div className="icon-template-path">
               <div className="w-embed">
@@ -434,7 +450,7 @@ const ItemsGrid = () => {
             </div>
           </div>
         </div>
-        <div className="wrapper-image-path _5">
+        <div className="wrapper-image-path fifth-col-animation">
           <div className="template-image-path">
             <div className="icon-template-path">
               <div className="w-embed">
@@ -486,6 +502,7 @@ const ItemsGrid = () => {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </>
   );

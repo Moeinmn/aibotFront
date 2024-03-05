@@ -24,7 +24,7 @@ const FeatureSection = () => {
      </h5>
     </div>
           </div> */}
-      <Grid container spacing={2}>
+      <Grid container spacing={2} height={"600px"}>
         <Grid
           item
           xs={12}
@@ -66,11 +66,11 @@ const FeatureSection = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}>
+        <Grid item xs={12} md={6} style={{position: "relative"}}>
         <ItemsGrid/>
         </Grid>
       </Grid>
-      {/* <Grid container spacing={2}>
+      <Grid container spacing={2}>
         <Grid
           item
           xs={12}
@@ -116,7 +116,7 @@ const FeatureSection = () => {
           </Box>
         </Grid>
         <Grid item xs={12} md={6}></Grid>
-      </Grid> */}
+      </Grid>
     </div>
     </Container>
   );
