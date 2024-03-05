@@ -1,23 +1,46 @@
 "use client";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import "./style.css";
 
 import { useSpring, animated } from 'react-spring';
 
 const ItemsGrid = () => {
 
+  const myElementRef = useRef(null);
+
   const [{ scrollY }, setScrollY] = useSpring(() => ({ scrollY: 300 }));
 
     // Update scrollY value on scroll
     useEffect(()=>{
-      window.addEventListener('scroll', () => {
+      
+      function calculateVisibility(element) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        
+        // Calculate the percentage of the element's height visible on the screen
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        const visiblePercentage = visibleHeight / element.offsetHeight * 100;
+      
+        return visibleHeight;
+      }
+
+      window.addEventListener('scroll', (e) => {
+        console.log({e});
+        // const { top } = myElementRef.current.getBoundingClientRect();
+        // console.log('Y-coordinate:', top);
+
+if (myElementRef) {
+  const visibility = calculateVisibility(myElementRef);
+  console.log('Visible percentage:', visibility);
+}
+
         setScrollY({ scrollY: window.scrollY });
     });
     },[])
 
   return (
     <>
-    <div className={'box-image-path'}>
+    <div className={'box-image-path'} ref={myElementRef}>
       <div className="item-image-path">
         <animated.div className="wrapper-image-path " style={{
                     transform: scrollY.interpolate(y => `translate3d(0px, ${y * 0.25}px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg)`)
