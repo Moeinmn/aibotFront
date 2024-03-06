@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Box, Container, Grid, Typography } from "@mui/material";
 import Link from "next/link";
 import ItemsGrid from "../ItemsGrid";
+import IntegrationGrid from "../IntegrationGrid";
 
 const FeatureSection = () => {
   return (
@@ -115,7 +116,9 @@ const FeatureSection = () => {
             </Link>
           </Box>
         </Grid>
-        <Grid item xs={12} md={6}></Grid>
+        <Grid item xs={12} md={6}>
+        <IntegrationGrid/>
+        </Grid>
       </Grid>
       <Grid container spacing={2}>
         <Grid
