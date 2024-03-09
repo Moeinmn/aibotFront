@@ -1,0 +1,10 @@
+.container{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.active{
+    border-bottom: 2px solid #475BE8;
+}

@@ -10,5 +10,6 @@
   .container:hover,
   .active {
     background-color:#475BE8;
+    color: aliceblue;
   }
   

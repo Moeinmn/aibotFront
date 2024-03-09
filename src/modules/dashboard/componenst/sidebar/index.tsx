@@ -1,7 +1,6 @@
 import MenuLink from "./component/menulink";
 import "./style.css";
-import { MdOutlineSpaceDashboard,MdEditDocument,MdMessage } from "react-icons/md";
-import { CgProfile } from "react-icons/cg";
+import { MdOutlineSpaceDashboard,MdEditDocument,MdMessage,MdOutlineSettingsSuggest } from "react-icons/md";
 
 
 
@@ -16,7 +15,7 @@ const menuItems = [
         },
         {
           title: "آموزش ربات",
-          path: "/dashboard/tarin",
+          path: "/dashboard/train",
           icon: <MdEditDocument />,
         },
         {
@@ -25,9 +24,9 @@ const menuItems = [
           icon: <MdMessage />,
         },
         {
-          title: "پروفایل من",
-          path: "/dashboard/profile",
-          icon: <CgProfile />,
+          title: "تنظیمات",
+          path: "/dashboard/setting",
+          icon: <MdOutlineSettingsSuggest />,
         },
       ],
     }
