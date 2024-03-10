@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="footer-main" style={{marginTop:"200px"}}>
+    <footer className="footer-main" style={{marginTop:"50px"}}>
       <div className="w-layout-blockcontainer container-medium w-container">
         <div className="wrapper-section">
           <div className="grid-footer">
