@@ -8,7 +8,8 @@ const FeaturesCards = () => {
         <Image
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/651bde55c70a6abcd28bad3e_circle-grid-bg_dots.webp"
           loading="lazy"
-          sizes="100vw"
+          width={50}
+          height={50}
           alt=""
         />
       </div>
@@ -46,6 +47,8 @@ const FeaturesCards = () => {
                         <Image
                           src="https://assets-global.website-files.com/63dc0d3315e91c8108842079/63dc0d3315e91c1b4d8422aa_bar-chart.svg"
                           loading="lazy"
+                          width={50}
+                          height={50}
                           alt="Chart Icon"
                         />
                       </div>
@@ -88,8 +91,7 @@ const FeaturesCards = () => {
                   <Image
                     src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513f94ab8b34f0ba1d9015e_insights.webp"
                     loading="lazy"
-                    width="500"
-                    sizes="(max-width: 479px) 100vw, 500px"
+                    fill
                     alt="gather insights. Gather insights and continuously improve"
                     className="card-img-global is-card-1"
                   />
@@ -108,6 +110,8 @@ const FeaturesCards = () => {
                         <Image
                           src="https://assets-global.website-files.com/63dc0d3315e91c8108842079/63dc0d3315e91c23068422ab_message-circle.svg"
                           loading="lazy"
+                          width={50}
+                          height={50}
                           alt="Chat Icon"
                         />
                       </div>
@@ -149,8 +153,7 @@ const FeaturesCards = () => {
                   <Image
                     src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513f8f0af140d429dda79d4_chat.webp"
                     loading="lazy"
-                    sizes="(max-width: 479px) 100vw, 512px"
-                    width="512"
+                    fill
                     alt="Img of the Chat. Chat in any language"
                     className="card-img-global"
                   />
@@ -169,6 +172,8 @@ const FeaturesCards = () => {
                         <Image
                           src="https://assets-global.website-files.com/63dc0d3315e91c8108842079/63dc0d3315e91ce1fc8422ac_mouse-pointer.svg"
                           loading="lazy"
+                          width={50}
+                          height={50}
                           alt="Arrow Icon"
                         />
                       </div>
@@ -208,9 +213,7 @@ const FeaturesCards = () => {
                 <div className="box-image-global">
                   <Image
                     src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e0ee7a8d45c43f498058_chanels.webp"
-                    loading="lazy"
-                    sizes="(max-width: 479px) 100vw, 512px"
-                    width="512"
+                    fill
                     alt="One-click deploy to any Chanal. Logo link grid"
                     className="card-img-global is-card-3"
                   />
