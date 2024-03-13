@@ -6,6 +6,7 @@ import FeatureSection from "./components/featureSection";
 import useStyles from "./styles";
 import FeaturesCards from "./components/FeaturesCards";
 import TryNow from "./components/TryNow";
+import { PreviewTracingBeam } from "@/src/shared/components/common/BeamTrace";
 
 
 const Landing=()=>{

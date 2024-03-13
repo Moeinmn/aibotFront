@@ -3,15 +3,8 @@ import "./style.css";
 
 const FeaturesCards = () => {
   return (
-    <section className="section-large">
+    <section className="section-large ">
       <div className="bg-global">
-        <Image
-          src="https://assets-global.website-files.com/635c4eeb78332f7971255095/651bde55c70a6abcd28bad3e_circle-grid-bg_dots.webp"
-          loading="lazy"
-          width={50}
-          height={50}
-          alt=""
-        />
       </div>
       <div className="w-layout-blockcontainer container-medium w-container">
         <div className="wrapper-section position-relative">

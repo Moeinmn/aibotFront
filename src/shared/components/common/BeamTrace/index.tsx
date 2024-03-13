@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 export const PreviewTracingBeam = () => {
   // Create a state for the SVG height
-  const [svgHeight, setSvgHeight] = useState(0);
+  const [svgHeight, setSvgHeight] = useState(1000);
 
   const containerRef = useRef(null);
   const contentRef = useRef(null);

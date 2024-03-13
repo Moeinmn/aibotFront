@@ -1,4 +1,10 @@
+.section-normal {
+    padding-top: 3.75rem;
+    padding-bottom: 3.75rem;
+    position: relative;
+}
 .bg-cta {
+     background-image: url("https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp");
     position: absolute;
     top: 0%;
     bottom: 0%;
