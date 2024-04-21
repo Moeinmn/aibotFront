@@ -3,7 +3,7 @@ import "./style.css";
 
 const TryNow = () => {
   return (
-    <section className="section-normal overflow-hidden">
+    <section className="container mx-auto section-normal overflow-hidden">
         <div className="bg-cta">
           <img
             src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp"

@@ -6,7 +6,7 @@ const FeaturesCards = () => {
     <section className="section-large ">
       <div className="bg-global">
       </div>
-      <div className="w-layout-blockcontainer container-medium w-container">
+      <div className="mx-auto container-medium w-container">
         <div className="wrapper-section position-relative">
           <div
             data-w-id="6549d020-2168-6fe0-4ebd-d77ea25fb3bd"

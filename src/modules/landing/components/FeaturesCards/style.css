@@ -59,7 +59,6 @@ heading-2 {
 }
 
 .grid-global {
-    max-width: 1124px;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     grid-template-rows: auto;
@@ -70,7 +69,11 @@ heading-2 {
     margin-right: auto;
     display: grid;
 }
-
+@media screen and (max-width: 991px){
+.grid-global {
+    grid-template-columns: 1fr;
+}
+}
 .card-global {
     background-color: #fdfdfd;
     border: 1px solid #e2e8f0;
