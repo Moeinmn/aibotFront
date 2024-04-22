@@ -5,7 +5,27 @@ import localFont from "next/font/local"
 
 
 
+
 const myFont = localFont({ src: '../../../../../fonts/IRANYekanBold.ttf' })
+
+const irsans = localFont({
+  src: [
+    {
+      path: '../../../../../fonts/iranyekanwebregular.woff2',
+      weight: '400'
+    },
+    {
+      path: '../../../../../fonts/IRANYekanBold.ttf',
+      weight: '500'
+    },
+    {
+      path: '../../../../../fonts/iranyekanwebextrabold.woff',
+      weight: '600'
+    }
+  ],
+  variable: '--font-poppins'
+})
+
 const SiteLayout = (props:any) => {
  
   return (

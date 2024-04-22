@@ -156,3 +156,15 @@
     color: transparent;
     border-left: 2px solid #607af9;
 }
+.gradientText{
+    text-shadow: 0 3px 8px rgba(77,243,255,.22);
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(360deg, #5154ff, #559fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 700;
+    position: relative;
+}
+.titleContianer{
+  text-align: center;
+}

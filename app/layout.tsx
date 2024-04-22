@@ -9,7 +9,6 @@ import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import PanelLayout from '@/src/shared/components/layouts/panel/panel-lauout'
 
-const inter = Inter({ subsets: ['latin'] })
 
 // export const metadata: Metadata = {
 //   title: 'Create Next App',
