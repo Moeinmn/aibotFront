@@ -167,10 +167,12 @@
 }
 .titleContianer{
   text-align: center;
+  margin:190px 0px 70px 0px;
 }
 
 .itemsContainer{
 position: relative;
 height: 600px;
 overflow:hidden;
+mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 25%, rgb(0, 0, 0) 75%, rgba(0, 0, 0, 0) 100%);
 }

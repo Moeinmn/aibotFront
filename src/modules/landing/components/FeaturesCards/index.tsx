@@ -1,11 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import "./style.css";
+import { motion } from "framer-motion";
 
 const FeaturesCards = () => {
   return (
     <section className="section-large ">
-      <div className="bg-global">
-      </div>
+      <div className="bg-global"></div>
       <div className="mx-auto container-medium w-container">
         <div className="wrapper-section position-relative">
           <div
@@ -14,13 +16,13 @@ const FeaturesCards = () => {
           >
             <div className="title-section-footer">
               <h2 className="heading-2">
-              مکالمات در{" "}
+                مکالمات در{" "}
                 <span className="gradient-h2 is-v2">مقیاس جهانی&nbsp;</span>
               </h2>
             </div>
             <div className="description-section-main margin-top-24px max-w-85">
               <p className="paragraph-size-medium">
-              یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
+                یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
               </p>
             </div>
           </div>
@@ -28,7 +30,12 @@ const FeaturesCards = () => {
             data-w-id="5f05bd1f-8b92-a2cc-ffb8-7a9d6e921963"
             className="grid-global"
           >
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: "+10%" }}
+              whileInView={{
+                opacity: 1, y: 0
+              }}
+              transition={{ duration: 1 , delay: .3 }}
               id="w-node-_0d659433-b36c-e7ea-0881-de8785692c45-6e09f0d4"
               className="box-card-global _1"
             >
@@ -47,19 +54,19 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">
-                        داده ها
-                      </p>
+                      <p className="paragraph-normal color-purple-1">داده ها</p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
                         <p className="paragraph-x-large weight-500">
-                        داده ها را جمع‌آوری کرده و به طور پیوسته بهبود بخشید
+                          داده ها را جمع‌آوری کرده و به طور پیوسته بهبود بخشید
                         </p>
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        با استفاده از بینش‌ها از تجزیه و تحلیل، سوءتفاهم و تجزیه و تحلیل احساسات ما، به طور پیوسته چت‌بات خود را بهبود بخشید
+                          با استفاده از بینش‌ها از تجزیه و تحلیل، سوءتفاهم و
+                          تجزیه و تحلیل احساسات ما، به طور پیوسته چت‌بات خود را
+                          بهبود بخشید
                         </p>
                       </div>
                     </div>
@@ -88,8 +95,13 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, y: "+10%" }}
+            whileInView={{
+              opacity: 1, y: 0
+            }}
+            transition={{ duration: 1 , delay: 0 }}
               id="w-node-_922c402a-9cd7-d306-76d8-bb2289ac9a5b-6e09f0d4"
               className="box-card-global _2"
             >
@@ -118,7 +130,10 @@ const FeaturesCards = () => {
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        موتور ما به طور خودکار به بیش از 100 زبان ترجمه می‌کند، بنابراین شما می‌توانید چت‌بات خود را به صورت جهانی راه‌اندازی کنید. به آرزوهای سازمانی خود مانعی از نظر زبانی نشوید.&nbsp;
+                          موتور ما به طور خودکار به بیش از 100 زبان ترجمه
+                          می‌کند، بنابراین شما می‌توانید چت‌بات خود را به صورت
+                          جهانی راه‌اندازی کنید. به آرزوهای سازمانی خود مانعی از
+                          نظر زبانی نشوید.&nbsp;
                         </p>
                       </div>
                     </div>
@@ -147,8 +162,13 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+            initial={{ opacity: 0, y: "+10%" }}
+            whileInView={{
+              opacity: 1, y: 0
+            }}
+            transition={{ duration: 1 , delay: .6 }}
               id="w-node-fd3e8155-d77f-bff6-b0cd-7f6091e81b09-6e09f0d4"
               className="box-card-global _3"
             >
@@ -167,7 +187,9 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">راه‌اندازی</p>
+                      <p className="paragraph-normal color-purple-1">
+                        راه‌اندازی
+                      </p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
@@ -177,7 +199,9 @@ const FeaturesCards = () => {
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        در یک کانال متوقف نشوید. با یک کلیک به تمام کانال‌های ما راه‌اندازی کنید تا با کاربران خود در محیطی که هستند، ارتباط برقرار کنید.
+                          در یک کانال متوقف نشوید. با یک کلیک به تمام کانال‌های
+                          ما راه‌اندازی کنید تا با کاربران خود در محیطی که
+                          هستند، ارتباط برقرار کنید.
                         </p>
                       </div>
                     </div>
@@ -206,7 +230,7 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

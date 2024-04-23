@@ -1,9 +1,18 @@
+//https://www.framer.com/motion/use-in-view/
+'use client';
+
 import Image from "next/image";
 import "./style.css";
+import { motion, useInView } from 'framer-motion'
+import { useRef } from "react";
 
 const TryNow = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
-    <section className="container mx-auto section-normal overflow-hidden">
+    <motion.section 
+    whileInView={{scale: [0.5, 1, 0.5]}} transition={{duration: 2}}
+    className="container mx-auto section-normal overflow-hidden">
         <div className="bg-cta">
           <img
             src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp"
@@ -56,7 +65,7 @@ const TryNow = () => {
             className="image-bg-cta"
           />
         </div>
-    </section>
+    </motion.section>
   );
 };
 
