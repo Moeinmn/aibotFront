@@ -29,6 +29,11 @@
     grid-auto-columns: 1fr;
     display: grid;
 }
+@media (max-width: 600px) {
+.grid-footer {
+    grid-template-columns: repeat(1, 1fr); /* Six columns */
+}
+}
 
 /* Styles for a specific element within the grid */
 .w-node {

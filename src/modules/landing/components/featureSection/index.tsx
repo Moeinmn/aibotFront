@@ -15,7 +15,7 @@ const FeatureSection = () => {
       
 <h2 className="text-5xl">همه چیزی که برای ساخت <br/> <span className={styles.gradientText}>ربات‌های سفارشی</span> نیاز دارید.</h2>
       </div>
-      <Grid container spacing={2} height={"1200px"} mt={4}>
+      <Grid container spacing={2} mt={4}>
         <Grid
           item
           xs={12}
@@ -56,7 +56,7 @@ const FeatureSection = () => {
 
           </Box>
         </Grid>
-        <Grid item xs={12} md={6} style={{position: "relative"}}>
+        <Grid item xs={12} md={6} className={styles.itemsContainer}>
         <ItemsGrid/>
         </Grid>
       </Grid>

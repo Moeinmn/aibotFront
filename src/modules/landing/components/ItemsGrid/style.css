@@ -80,6 +80,20 @@
   box-shadow: inset 2px 2px 2px #fff, -3px -4px 4px #fff,
     2px 2px 4px rgba(0, 0, 0, 0.08);
 }
+@media (max-width: 1400px) {
+  .template-image-path {
+    width: 140px;
+  }
+}
+
+/* Media query for screens smaller than 576px (e.g., smartphones) */
+@media (max-width: 575px) {
+  .template-image-path {
+    width: 100px; /* Adjust width for even smaller screens */
+    padding: 8px; /* Adjust padding */
+  }
+}
+
 
 .icon-template-path {
     width: 100%;
