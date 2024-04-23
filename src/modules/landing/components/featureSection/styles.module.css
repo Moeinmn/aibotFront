@@ -168,3 +168,9 @@
 .titleContianer{
   text-align: center;
 }
+
+.itemsContainer{
+position: relative;
+height: 600px;
+overflow:hidden;
+}

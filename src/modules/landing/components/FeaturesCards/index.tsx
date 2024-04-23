@@ -14,13 +14,13 @@ const FeaturesCards = () => {
           >
             <div className="title-section-footer">
               <h2 className="heading-2">
-                Conversations at{" "}
-                <span className="gradient-h2 is-v2">global scale&nbsp;</span>
+              مکالمات در{" "}
+                <span className="gradient-h2 is-v2">مقیاس جهانی&nbsp;</span>
               </h2>
             </div>
             <div className="description-section-main margin-top-24px max-w-85">
               <p className="paragraph-size-medium">
-                Build once. Scale across any channel, in any language.
+              یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
               </p>
             </div>
           </div>
@@ -48,20 +48,18 @@ const FeaturesCards = () => {
                     </div>
                     <div className="title-section-footer margin-top-34ox">
                       <p className="paragraph-normal color-purple-1">
-                        INSIGHTS
+                        داده ها
                       </p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
                         <p className="paragraph-x-large weight-500">
-                          Gather insights and continuously improve
+                        داده ها را جمع‌آوری کرده و به طور پیوسته بهبود بخشید
                         </p>
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                          Leverage insights from our Analytics, Misunderstood
-                          and Sentime nt Analysis to continuously improve your
-                          chatbot.
+                        با استفاده از بینش‌ها از تجزیه و تحلیل، سوءتفاهم و تجزیه و تحلیل احساسات ما، به طور پیوسته چت‌بات خود را بهبود بخشید
                         </p>
                       </div>
                     </div>
@@ -72,7 +70,7 @@ const FeaturesCards = () => {
                       className="link-card-main w-inline-block"
                     >
                       <div className="content-card-link">
-                        <div>Learn more</div>
+                        <div>مشاهده</div>
                         <div className="box-rotate-rtl">
                           <div className="arrow-primary"></div>
                         </div>
@@ -110,20 +108,17 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">CHAT</p>
+                      <p className="paragraph-normal color-purple-1">چت‌ها</p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
                         <p className="paragraph-x-large weight-500">
-                          <span>Chat in any language</span>
+                          <span>در هر زبانی چت کنید</span>
                         </p>
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                          Our engine automatically translates to 100+ languages
-                          out of the box so you can launch your chatbot
-                          globally. Don’t let language be a barrier to your
-                          organization’s ambitions.&nbsp;
+                        موتور ما به طور خودکار به بیش از 100 زبان ترجمه می‌کند، بنابراین شما می‌توانید چت‌بات خود را به صورت جهانی راه‌اندازی کنید. به آرزوهای سازمانی خود مانعی از نظر زبانی نشوید.&nbsp;
                         </p>
                       </div>
                     </div>
@@ -134,7 +129,7 @@ const FeaturesCards = () => {
                       className="link-card-main w-inline-block"
                     >
                       <div className="content-card-link">
-                        <div>Learn more</div>
+                        <div>مشاهده</div>
                         <div className="box-rotate-rtl">
                           <div className="arrow-primary"></div>
                         </div>
@@ -172,18 +167,17 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">DEPLOY</p>
+                      <p className="paragraph-normal color-purple-1">راه‌اندازی</p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
                         <p className="paragraph-x-large weight-500">
-                          <span>One-Click Deploy to Any Channel</span>
+                          <span>راه‌اندازی با یک کلیک بر روی هر کانال</span>
                         </p>
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                          Don’t stop at one channel. One–click deploy across all
-                          our channels to meet your users where they are.
+                        در یک کانال متوقف نشوید. با یک کلیک به تمام کانال‌های ما راه‌اندازی کنید تا با کاربران خود در محیطی که هستند، ارتباط برقرار کنید.
                         </p>
                       </div>
                     </div>
@@ -195,7 +189,7 @@ const FeaturesCards = () => {
                       className="link-card-main w-inline-block"
                     >
                       <div className="content-card-link">
-                        <div>Learn more</div>
+                        <div>مشاهده</div>
                         <div className="box-rotate-rtl">
                           <div className="arrow-primary"></div>
                         </div>
