@@ -57,83 +57,83 @@ const Footer = () => {
             <div className="column w-node">
               <div className="title-section-footer">
                 <p className="paragraph-small-main">
-                  <strong>Product</strong>
+                  <strong>محصول</strong>
                 </p>
               </div>
               <hr className="list-line"></hr>
               <div className="box-links-footer">
                 <a href="/pricing" className="link-footer">
-                  Pricing
+                قیمت‌
                 </a>
                 <a href="/features/gpt-native-engine" className="link-footer">
-                  Engine
+                امنیت
                 </a>
                 <a href="/features/conversation-studio" className="link-footer">
-                  Studio
+                همکاران
                 </a>
                 <a
                   href="https://botpress.com/docs/cloud/getting-started/languages/"
                   target="_blank"
                   className="link-footer"
                 >
-                  Languages
+                  زبان ها
                 </a>
               </div>
             </div>
             <div className="column w-node">
               <div className="title-section-footer">
                 <p className="paragraph-small-main">
-                  <strong>Product</strong>
+                  <strong>منابع </strong>
                 </p>
               </div>
               <hr className="list-line"></hr>
               <div className="box-links-footer">
                 <a href="/pricing" className="link-footer">
-                  Pricing
+                  API
                 </a>
                 <a href="/features/gpt-native-engine" className="link-footer">
-                  Engine
+                تماس با ما 
                 </a>
                 <a href="/features/conversation-studio" className="link-footer">
-                  Studio
+                راهنما 
                 </a>
                 <a
                   href="https://botpress.com/docs/cloud/getting-started/languages/"
                   target="_blank"
                   className="link-footer"
                 >
-                  Languages
+                  وبلاگ 
                 </a>
               </div>
             </div>
             <div className="column w-node">
               <div className="title-section-footer">
                 <p className="paragraph-small-main">
-                  <strong>Product</strong>
+                  <strong>شرکت</strong>
                 </p>
               </div>
               <hr className="list-line"></hr>
 
               <div className="box-links-footer">
                 <a href="/pricing" className="link-footer">
-                  Pricing
+                سیاست حفظ حریم خصوصی (Privacy Policy)
                 </a>
                 <a href="/features/gpt-native-engine" className="link-footer">
-                  Engine
+                شرایط خدمات (Terms of Service)
                 </a>
                 <a href="/features/conversation-studio" className="link-footer">
-                  Studio
+                توافقنامه پردازش داده (DPA)
                 </a>
                 <a
                   href="https://botpress.com/docs/cloud/getting-started/languages/"
                   target="_blank"
                   className="link-footer"
                 >
-                  Languages
+                  سیاست کوکی (Cookie Policy)
                 </a>
               </div>
             </div>
-            <div className="column w-node">
+            {/* <div className="column w-node">
               <div className="title-section-footer">
                 <p className="paragraph-small-main">
                   <strong>Product</strong>
@@ -184,7 +184,7 @@ const Footer = () => {
                   Languages
                 </a>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

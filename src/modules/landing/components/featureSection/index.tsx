@@ -42,7 +42,7 @@ const FeatureSection = () => {
               whileInView={{
                 height:"100%"
               }}
-              transition={{ duration: 2 , delay: 0 }}
+              transition={{ duration: 3 , delay: 0 }}
               className={styles.connectorPath}>
 
               </motion.div>
@@ -98,7 +98,7 @@ const FeatureSection = () => {
               whileInView={{
                 height:"100%"
               }}
-              transition={{ duration: 2 , delay: 0 }}
+              transition={{ duration: 3 , delay: 0 }}
               className={styles.connectorPath}>
 
               </motion.div>
@@ -147,7 +147,7 @@ const FeatureSection = () => {
               whileInView={{
                 height:"100%"
               }}
-              transition={{ duration: 2 , delay: 0 }}
+              transition={{ duration: 3 , delay: 0 }}
               className={styles.connectorPath}>
 
               </motion.div>
@@ -196,9 +196,8 @@ const FeatureSection = () => {
               whileInView={{
                 height:"100%"
               }}
-              transition={{ duration: 2 , delay: 0 }}
+              transition={{ duration: 3 , delay: 0 }}
               className={styles.connectorPath}>
-
               </motion.div>
             </div>
             <Box>

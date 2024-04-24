@@ -3,15 +3,23 @@
 
 import Image from "next/image";
 import "./style.css";
-import { motion, useInView } from 'framer-motion'
-import { useRef } from "react";
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from "react";
 
 const TryNow = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const mainRef = useRef(null);
+  const isInView = useInView(mainRef, { once: true });
+
+  const animController = useAnimation();
+
+  useEffect(()=>{
+    if(isInView){
+      animController.start("visible")
+    }
+  },[isInView])
   return (
-    <motion.section 
-    whileInView={{scale: [0.5, 1, 0.5]}} transition={{duration: 2}}
+    <section 
+    ref={mainRef}
     className="container mx-auto section-normal overflow-hidden">
         <div className="bg-cta">
           <img
@@ -22,7 +30,17 @@ const TryNow = () => {
             className="image-full-contain"
           />
         </div>
-        <div className="content-cta">
+        <motion.div
+        variants={{
+          hidden: {opacity:0 , scale:0.5},
+          visible: {opacity:1 , scale:1}
+        }}
+        initial="hidden"
+        animate={animController}
+        transition={{duration: 2}}
+
+
+        className="content-cta">
           <div className="wrapper-section width-100pc">
             <div className="content-cta-main">
               <div className="head-section">
@@ -64,8 +82,8 @@ const TryNow = () => {
             alt=""
             className="image-bg-cta"
           />
-        </div>
-    </motion.section>
+        </motion.div>
+    </section>
   );
 };
 
