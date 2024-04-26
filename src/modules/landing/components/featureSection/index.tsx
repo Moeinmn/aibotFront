@@ -7,6 +7,7 @@ import Link from "next/link";
 import ItemsGrid from "../ItemsGrid";
 import IntegrationGrid from "../IntegrationGrid";
 import { motion } from 'framer-motion'
+import KnowledgeBaseGrid from "../knowledgeBaseGrid";
 
 const FeatureSection = () => {
   return (
@@ -65,14 +66,15 @@ const FeatureSection = () => {
               </p>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} className={styles.itemsContainer}>
-            <Image
+          <Grid item xs={12} md={6}>
+            {/* <Image
               layout="fill"
               src="https://assets-global.website-files.com/635c4eeb78332f7971255095/65eeb1836d1cabac275fe48d_Import%20Knowledge-p-800.png"
               loading="lazy"
               alt="window icon"
               className="icon-path"
-            />
+            /> */}
+            <KnowledgeBaseGrid/>
           </Grid>
         </Grid>
         <Grid container spacing={2} mt={4}>

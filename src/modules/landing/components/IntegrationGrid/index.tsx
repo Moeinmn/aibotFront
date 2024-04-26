@@ -1,13 +1,34 @@
+'use client';
 import Image from "next/image";
 import "./style.css";
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from "react";
 
 const IntegrationGrid = () => {
+  const mainRef = useRef(null);
+  const isInView = useInView(mainRef, { once: true });
+
+  const animController = useAnimation();
+
+  useEffect(()=>{
+    if(isInView){
+      animController.start("visible")
+    }
+  },[isInView])
   return (
     <div
+      ref={mainRef}
       data-w-id="7e8c62a5-9cdb-d005-1b09-72c08ee57490"
       className="grid-icon-integration"
     >
-      <div
+      <motion.div
+                variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0.1 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee57491-6e09f0d4"
         className="icon-integration layer2 twilio"
       >
@@ -19,8 +40,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/637b9f8d4f76a721ecc2b5a6_twilio.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0.2 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee57493-6e09f0d4"
         className="icon-integration layer3 mail"
       >
@@ -32,8 +60,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f2a8f023a12d3698f386_gmailIcon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0.3 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee57495-6e09f0d4"
         className="icon-integration layer3 salesforce"
       >
@@ -45,8 +80,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f4635f63fb218ac6e573_Salesforce.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0.4 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee57497-6e09f0d4"
         className="icon-integration layer3 docs"
       >
@@ -58,8 +100,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7686730313d1b1851b9b5_google-docs-svgrepo-com.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0.5 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee57499-6e09f0d4"
         className="icon-integration layer4 skype"
       >
@@ -71,8 +120,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f7b211a832a624536eb4_Skype_logo_(2019%E2%80%93present).svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: .6 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee5749b-6e09f0d4"
         className="icon-integration layer4 zoom"
       >
@@ -84,8 +140,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f87642683947edc21be7_zoom-icon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: .7 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee5749d-6e09f0d4"
         className="icon-integration layer4 snapchat"
       >
@@ -97,8 +160,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f9411fbb0703b9d5a36c_SnapchatIcon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: .8 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee5749f-6e09f0d4"
         className="icon-integration layer4 infinite"
       >
@@ -110,8 +180,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f9dd2d8befe8d2059e7b_icons8-infinity-symbol-80.webp"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: .9}}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574a1-6e09f0d4"
         className="icon-integration layer3 whatsapp"
       >
@@ -123,8 +200,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f45fde2c90121a9d4d68_whatsapp.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574a3-6e09f0d4"
         className="icon-integration layer3 insta"
       >
@@ -136,8 +220,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f58ff8d43b9dd4567113_Instagram_logo_2022.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.1 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574a5-6e09f0d4"
         className="icon-integration layer3 trello"
       >
@@ -149,8 +240,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d763eefd6247d73f40e9bd_Trello%20Logo.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.2 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574a7-6e09f0d4"
         className="icon-integration layer3 wechat"
       >
@@ -162,8 +260,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f72a1470f9fb079f9504_WeChat_PC_App_Icon_200528.webp"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .3, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.3 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574a9-6e09f0d4"
         className="icon-integration layer3 linkedin"
       >
@@ -175,8 +280,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f65c5ee35bc356ba9233_linkedin-icon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.4 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574ab-6e09f0d4"
         className="icon-integration layer2 messenger"
       >
@@ -188,8 +300,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/637bccb2bab43ba1068d52c0_facebook-messenger-3.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.5 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574ad-6e09f0d4"
         className="icon-integration layer1 slack"
       >
@@ -201,8 +320,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/637bccb21702c546da8527c8_slack-new-logo.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.6 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574af-6e09f0d4"
         className="icon-integration layer2 telegram"
       >
@@ -214,8 +340,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/637bccb2241f010d200fa2f9_telegram-1.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.7 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574b1-6e09f0d4"
         className="icon-integration layer2 uipath"
       >
@@ -227,8 +360,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7fc1e90ee3ccfba2efecf_UIPathIcon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 1.8 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574b3-6e09f0d4"
         className="icon-integration layer1 zendesk"
       >
@@ -240,8 +380,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7f45bca6ca652627de146_zendeskIcon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 0 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574b5-6e09f0d4"
         className="icon-integration bp"
       >
@@ -253,8 +400,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d76f6d32dbbf24052effa2_BPRecess.svg"
           className="integration-Image /bp"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574b7-6e09f0d4"
         className="icon-integration layer1 zapier"
       >
@@ -266,8 +420,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7fc13afe7f9b60079bdc0_zapier-icon.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2.1 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574b9-6e09f0d4"
         className="icon-integration layer2 twitter"
       >
@@ -279,8 +440,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d7661854c09d2cca8960d9_Logo%20blue.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2.2 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574bb-6e09f0d4"
         className="icon-integration layer2 teams"
       >
@@ -293,8 +461,15 @@ const IntegrationGrid = () => {
           alt="Microsoft Teams logo"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: 1, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2.3 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574bd-6e09f0d4"
         className="icon-integration layer1 github"
       >
@@ -307,8 +482,15 @@ const IntegrationGrid = () => {
           alt="Git Hub Emblem"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2.4 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574bf-6e09f0d4"
         className="icon-integration layer2 discord"
       >
@@ -320,8 +502,15 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d76718883e4549d223becd_discord-icon-svgrepo-com.svg"
           className="integration-Image"
         />
-      </div>
-      <div
+      </motion.div>
+      <motion.div
+      variants={{
+                  hidden: { opacity: 0, y: 0 },
+                  visible: {opacity: .69, y: 0}
+                }}
+                initial="hidden"
+                animate={animController}
+                transition={{ duration: .5 , delay: 2.5 }}
         id="w-node-_7e8c62a5-9cdb-d005-1b09-72c08ee574c1-6e09f0d4"
         className="icon-integration layer2 vonage"
       >
@@ -333,7 +522,7 @@ const IntegrationGrid = () => {
           src="https://assets-global.website-files.com/635c4eeb78332f7971255095/63d72e44dbdc8613fffbe9c1_Vonage.svg"
           className="integration-Image"
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
