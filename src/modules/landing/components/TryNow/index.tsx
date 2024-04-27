@@ -32,12 +32,12 @@ const TryNow = () => {
         </div>
         <motion.div
         variants={{
-          hidden: {opacity:0 , scale:0.5},
+          hidden: {opacity:0 , scale:0.9},
           visible: {opacity:1 , scale:1}
         }}
         initial="hidden"
         animate={animController}
-        transition={{duration: 2}}
+        transition={{duration: 1}}
 
 
         className="content-cta">
