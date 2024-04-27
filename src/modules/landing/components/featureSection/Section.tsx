@@ -20,7 +20,7 @@ const Section = ({children , sectionName , title , desc , imgURL , mask}:{
       },[isInView])
   
     return(
-        <Grid container spacing={2}>
+        <Grid container spacing={2} className="min-h-[500px]">
         <Grid
           ref={mainRef}
           item
@@ -91,7 +91,7 @@ const Section = ({children , sectionName , title , desc , imgURL , mask}:{
           </Box>
         </Grid>
         <Grid item xs={12} md={6} className={
-            mask ? styles.itemsContainer : ""
+            mask ? styles.itemsContainer : "flex align-center justify-center"
         }>
           {children}
         </Grid>

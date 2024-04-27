@@ -18,7 +18,7 @@ const KnowledgeBaseGrid = () => {
     }
   }, [isInView]);
   return (
-    <div className="grid grid-cols-2 gap-4" ref={mainRef}>
+    <div className="grid grid-cols-2 gap-4 py-20 w-[80%]" ref={mainRef}>
       <motion.div 
               variants={{
                 hidden: {opacity:0 , x:"+20%"},
@@ -30,7 +30,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
@@ -52,7 +52,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
@@ -78,7 +78,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
@@ -104,7 +104,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
@@ -126,7 +126,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
@@ -148,7 +148,7 @@ const KnowledgeBaseGrid = () => {
       className="flex p-2 justify-between items-center border border-gray-300 rounded-md">
         <div>
           <h3>افزودن وبسایت</h3>
-          <h5>سلام سلام سلام سلام</h5>
+          <h5 className="text-gray-400">سلام سلام سلام سلام</h5>
         </div>
         <div
           style={{
