@@ -26,17 +26,33 @@ const FeaturesCards = () => {
             data-w-id="6549d020-2168-6fe0-4ebd-d77ea25fb3bd"
             className="head-vertical"
           >
-            <div className="title-section-footer">
+            <motion.div 
+                          variants={{
+                            hidden: { opacity: 0, y: "+10%" },
+                            visible: {opacity: 1, y: 0}
+                          }}
+                          initial="hidden"
+                          animate={animController}
+                          transition={{ duration: 1 , delay: 0 }}
+            className="title-section-footer">
               <h2 className="heading-2">
                 مکالمات در{" "}
                 <span className="gradient-h2 is-v2">مقیاس جهانی&nbsp;</span>
               </h2>
-            </div>
-            <div className="description-section-main margin-top-24px max-w-85">
+            </motion.div>
+            <motion.div 
+                          variants={{
+                            hidden: { opacity: 0, y: "+10%" },
+                            visible: {opacity: 1, y: 0}
+                          }}
+                          initial="hidden"
+                          animate={animController}
+                          transition={{ duration: 1 , delay: 0.3 }}
+            className="description-section-main margin-top-24px max-w-85">
               <p className="paragraph-size-medium">
                 یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
               </p>
-            </div>
+            </motion.div>
           </div>
           <div
           ref={mainRef}
