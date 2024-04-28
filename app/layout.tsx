@@ -8,6 +8,7 @@ import useUser from '@/src/hooks/useUser'
 import { usePathname } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 import PanelLayout from '@/src/shared/components/layouts/panel/panel-lauout'
+import Script from 'next/script'
 
 
 // export const metadata: Metadata = {
@@ -20,6 +21,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
+
+
+
+
+
+
+
   const pathname = usePathname()
 
 
@@ -47,8 +57,17 @@ export default function RootLayout({
   const isDashboardRoute = pathname.startsWith('/dashboard');
 
 
+
+
   return (
     <>
+      <Script
+        src="/scripts/bot.js"
+        id="example-script"
+        nonce="XUENAJFW"
+        data-test="scriptrfagrgaegzrsegaregaete"
+      />
+      
       {isDashboardRoute ? (
        <PanelLayout>
          {children}
