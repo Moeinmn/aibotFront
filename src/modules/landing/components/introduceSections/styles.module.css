@@ -24,7 +24,10 @@
 
 
 .highlightedText {
-    color: #6254FF; /* Specific color for highlighted text */
+     /* Specific color for highlighted text */
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(360deg, #5154ff, #559fff);
+    background-clip: text;
 }
 .inputStyle {
     background-color: #596AF8; /* Background color */
@@ -115,12 +118,22 @@
     top: 90px;
     left: 80%;
     z-index: -1;
+    animation-name: float-right;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 .leftBlur{
     position:absolute;
     top: 90px;
     right: 83%;
     z-index: -1;
+    animation-name: float;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
 }
 .loadingOverlay {
     position: fixed;
@@ -131,6 +144,28 @@
     background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
     z-index: 999; /* Ensure the overlay is above other elements */
   }
+  @keyframes float {
+  0% {
+    transform: rotate(0deg);
+    transform: translatey(-18px);
+  }
+
+  100% {
+    transform: rotate(180deg);
+    transform: translatey(+18px);
+  }
+}
+  @keyframes float-right {
+  0% {
+
+    transform: translatey(+50px);
+  }
+
+  100% {
+
+    transform: translatey(-50px);
+  }
+}
   
   .loadingIndicator {
     position: fixed;

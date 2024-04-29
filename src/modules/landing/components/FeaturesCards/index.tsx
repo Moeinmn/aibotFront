@@ -1,34 +1,74 @@
+"use client";
+
 import Image from "next/image";
 import "./style.css";
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from "react";
 
 const FeaturesCards = () => {
+  const mainRef = useRef(null);
+  const isInView = useInView(mainRef, { once: true });
+
+  const animController = useAnimation();
+
+  useEffect(()=>{
+    if(isInView){
+      animController.start("visible")
+    }
+  },[isInView])
+
   return (
     <section className="section-large ">
-      <div className="bg-global">
-      </div>
+      <div className="bg-global"></div>
       <div className="mx-auto container-medium w-container">
         <div className="wrapper-section position-relative">
           <div
             data-w-id="6549d020-2168-6fe0-4ebd-d77ea25fb3bd"
             className="head-vertical"
           >
-            <div className="title-section-footer">
+            <motion.div 
+                          variants={{
+                            hidden: { opacity: 0, y: "+10%" },
+                            visible: {opacity: 1, y: 0}
+                          }}
+                          initial="hidden"
+                          animate={animController}
+                          transition={{ duration: 1 , delay: 0 }}
+            className="title-section-footer">
               <h2 className="heading-2">
-              مکالمات در{" "}
+                مکالمات در{" "}
                 <span className="gradient-h2 is-v2">مقیاس جهانی&nbsp;</span>
               </h2>
-            </div>
-            <div className="description-section-main margin-top-24px max-w-85">
+            </motion.div>
+            <motion.div 
+                          variants={{
+                            hidden: { opacity: 0, y: "+10%" },
+                            visible: {opacity: 1, y: 0}
+                          }}
+                          initial="hidden"
+                          animate={animController}
+                          transition={{ duration: 1 , delay: 0.3 }}
+            className="description-section-main margin-top-24px max-w-85">
               <p className="paragraph-size-medium">
-              یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
+                یک بار ساخته شود. در هر کانال و در هر زبان مقیاس داده شود.
               </p>
-            </div>
+            </motion.div>
           </div>
           <div
+          ref={mainRef}
             data-w-id="5f05bd1f-8b92-a2cc-ffb8-7a9d6e921963"
             className="grid-global"
           >
-            <div
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: "+10%" },
+                visible: {opacity: 1, y: 0}
+              }}
+              initial="hidden"
+              animate={animController}
+              transition={{ duration: 1 , delay: .8 }}
+
+
               id="w-node-_0d659433-b36c-e7ea-0881-de8785692c45-6e09f0d4"
               className="box-card-global _1"
             >
@@ -47,19 +87,19 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">
-                        داده ها
-                      </p>
+                      <p className="paragraph-normal color-purple-1">داده ها</p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
                         <p className="paragraph-x-large weight-500">
-                        داده ها را جمع‌آوری کرده و به طور پیوسته بهبود بخشید
+                          داده ها را جمع‌آوری کرده و به طور پیوسته بهبود بخشید
                         </p>
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        با استفاده از بینش‌ها از تجزیه و تحلیل، سوءتفاهم و تجزیه و تحلیل احساسات ما، به طور پیوسته چت‌بات خود را بهبود بخشید
+                          با استفاده از بینش‌ها از تجزیه و تحلیل، سوءتفاهم و
+                          تجزیه و تحلیل احساسات ما، به طور پیوسته چت‌بات خود را
+                          بهبود بخشید
                         </p>
                       </div>
                     </div>
@@ -88,8 +128,16 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, y: "+10%" },
+                visible: {opacity: 1, y: 0}
+              }}
+              initial="hidden"
+              animate={animController}
+              transition={{ duration: 1 , delay: 0.4 }}
+
               id="w-node-_922c402a-9cd7-d306-76d8-bb2289ac9a5b-6e09f0d4"
               className="box-card-global _2"
             >
@@ -118,7 +166,10 @@ const FeaturesCards = () => {
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        موتور ما به طور خودکار به بیش از 100 زبان ترجمه می‌کند، بنابراین شما می‌توانید چت‌بات خود را به صورت جهانی راه‌اندازی کنید. به آرزوهای سازمانی خود مانعی از نظر زبانی نشوید.&nbsp;
+                          موتور ما به طور خودکار به بیش از 100 زبان ترجمه
+                          می‌کند، بنابراین شما می‌توانید چت‌بات خود را به صورت
+                          جهانی راه‌اندازی کنید. به آرزوهای سازمانی خود مانعی از
+                          نظر زبانی نشوید.&nbsp;
                         </p>
                       </div>
                     </div>
@@ -147,8 +198,15 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+                          variants={{
+                hidden: { opacity: 0, y: "+10%" },
+                visible: {opacity: 1, y: 0}
+              }}
+              initial="hidden"
+              animate={animController}
+              transition={{ duration: 1 , delay: 1.2 }}
               id="w-node-fd3e8155-d77f-bff6-b0cd-7f6091e81b09-6e09f0d4"
               className="box-card-global _3"
             >
@@ -167,7 +225,9 @@ const FeaturesCards = () => {
                       </div>
                     </div>
                     <div className="title-section-footer margin-top-34ox">
-                      <p className="paragraph-normal color-purple-1">راه‌اندازی</p>
+                      <p className="paragraph-normal color-purple-1">
+                        راه‌اندازی
+                      </p>
                     </div>
                     <div className="content-card-global">
                       <div className="title-section-footer">
@@ -177,7 +237,9 @@ const FeaturesCards = () => {
                       </div>
                       <div className="description-section-main">
                         <p className="paragraph-normal weight-400 color-gray">
-                        در یک کانال متوقف نشوید. با یک کلیک به تمام کانال‌های ما راه‌اندازی کنید تا با کاربران خود در محیطی که هستند، ارتباط برقرار کنید.
+                          در یک کانال متوقف نشوید. با یک کلیک به تمام کانال‌های
+                          ما راه‌اندازی کنید تا با کاربران خود در محیطی که
+                          هستند، ارتباط برقرار کنید.
                         </p>
                       </div>
                     </div>
@@ -206,7 +268,7 @@ const FeaturesCards = () => {
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

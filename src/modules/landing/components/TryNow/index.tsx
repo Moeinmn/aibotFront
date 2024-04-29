@@ -1,9 +1,26 @@
+//https://www.framer.com/motion/use-in-view/
+'use client';
+
 import Image from "next/image";
 import "./style.css";
+import { motion, useAnimation, useInView } from 'framer-motion'
+import { useEffect, useRef } from "react";
 
 const TryNow = () => {
+  const mainRef = useRef(null);
+  const isInView = useInView(mainRef, { once: true });
+
+  const animController = useAnimation();
+
+  useEffect(()=>{
+    if(isInView){
+      animController.start("visible")
+    }
+  },[isInView])
   return (
-    <section className="container mx-auto section-normal overflow-hidden">
+    <section 
+    ref={mainRef}
+    className="container mx-auto section-normal overflow-hidden">
         <div className="bg-cta">
           <img
             src="https://assets-global.website-files.com/635c4eeb78332f7971255095/6513e01d8db38482a7f26a92_CTA(3).webp"
@@ -13,7 +30,17 @@ const TryNow = () => {
             className="image-full-contain"
           />
         </div>
-        <div className="content-cta">
+        <motion.div
+        variants={{
+          hidden: {opacity:0 , scale:0.9},
+          visible: {opacity:1 , scale:1}
+        }}
+        initial="hidden"
+        animate={animController}
+        transition={{duration: 1}}
+
+
+        className="content-cta">
           <div className="wrapper-section width-100pc">
             <div className="content-cta-main">
               <div className="head-section">
@@ -55,7 +82,7 @@ const TryNow = () => {
             alt=""
             className="image-bg-cta"
           />
-        </div>
+        </motion.div>
     </section>
   );
 };
