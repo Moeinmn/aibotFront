@@ -24,7 +24,10 @@
 
 
 .highlightedText {
-    color: #6254FF; /* Specific color for highlighted text */
+     /* Specific color for highlighted text */
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(360deg, #5154ff, #559fff);
+    background-clip: text;
 }
 .inputStyle {
     background-color: #596AF8; /* Background color */

@@ -80,7 +80,11 @@ const IntroduceSections = () => {
         <div className={styles.continer}>
           <h5>
             <p className={styles.introtext}>
-              ساخت <span className={styles.highlightedText}>چت بات هوشمند</span>{" "}
+              ساخت <span 
+                            style={{
+                              textShadow:"0 3px 8px rgba(77, 243, 255, .22)"
+                            }}
+              className={styles.highlightedText}>چت بات هوشمند</span>{" "}
               شخصی,
             </p>
           </h5>
