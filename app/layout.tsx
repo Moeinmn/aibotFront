@@ -63,9 +63,10 @@ export default function RootLayout({
     <>
       <Script
         src="/scripts/bot.js"
-        id="example-script"
+        id="myScript"
         nonce="XUENAJFW"
-        data-test="scriptrfagrgaegzrsegaregaete"
+        defer
+        data-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJwbG90c2V0MSIsImJvdElkIjoicGxvdHNldDEiLCJpYXQiOjE3MTQ5MDA3MDYsImV4cCI6MTcxNDk4MTcwNn0.xnHuwkxVFeHmcZYKWZ_zQXxo1zntk9Dj5X1oJ8cv1-I"
       />
       
       {isDashboardRoute ? (
