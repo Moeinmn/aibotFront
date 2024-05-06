@@ -120,7 +120,7 @@ const IntroduceSections = () => {
 
           <div className={styles.imagePhone}>
             <Image
-              src="/images/phone.png"
+              src="/images/first.svg"
               height="400"
               width="600"
               alt="Logo"

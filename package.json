@@ -17,8 +17,8 @@
     "@mui/styles": "^5.15.11",
     "apexcharts": "^3.46.0",
     "axios": "^1.6.7",
-    "clsx": "^2.1.0",
-    "framer-motion": "^11.0.12",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.1.8",
     "iconsax-react": "^0.0.8",
     "next": "14.0.4",
     "react": "^18",
@@ -31,6 +31,7 @@
     "react-spinners": "^0.13.8",
     "react-spring": "^9.7.3",
     "react-time-ago": "^7.2.1",
+    "tailwind-merge": "^2.3.0",
     "zustand": "^4.5.0"
   },
   "devDependencies": {

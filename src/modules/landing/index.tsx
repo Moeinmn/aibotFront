@@ -14,8 +14,20 @@ const Landing=()=>{
 
     return (
         <>
+        {/* <div style={{
+            backgroundImage: "url(https://assets-global.website-files.com/635c4ee…/651bdf2…_hero_dot_grid.webp), linear-gradient(#fff, #faf9f7)",
+            backgroundPosition: "50% 100%, 0 0",
+            backgroundRepeat: "no-repeat, repeat",
+            backgroundSize: "90%, auto",
+            // paddingop: 48px;
+            // padding-bottom: 48px;
+            // display: block;
+            // position: relative;
+            // overflow: hidden;
+        }}> */}
         <IntroduceSections/>
         <TrustBrnadSections/>
+        {/* </div> */}
         <FeatureSection/>
         <FeaturesCards/>
         <TryNow/>

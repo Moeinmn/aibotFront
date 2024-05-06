@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import styles from './styles.module.css'
+import { InfiniteMovingCardsDemo } from './InfiniteMovingCardsDemo';
 
 const TrustBrnadSections = ()=>{
     return(
@@ -11,7 +12,7 @@ const TrustBrnadSections = ()=>{
         <p>
         بیش از هزاران کسب و کار آنلاین به ما اعتماد کردند.
         </p>
-        <div className={styles.brandRow}>
+        {/* <div className={styles.brandRow}>
         <Image
         //    onClick={() => router.push('/')}
            src="/images/brands/jabama.png" 
@@ -76,7 +77,11 @@ const TrustBrnadSections = ()=>{
            width="100" 
            alt="Logo" 
            />
-        </div>
+        </div> */}
+
+<InfiniteMovingCardsDemo/>
+
+        
 
         </div>
 
